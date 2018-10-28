@@ -1,0 +1,419 @@
+$break-small: 400px;
+$break-large: 1200px;
+
+.sm-off {
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+}
+
+.invisible {
+  transition: opacity 1s ease;
+  opacity: 0.0;
+}
+
+.visible {
+  transition: opacity 1s ease;
+  opacity: 1.0;
+}
+
+
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=mep7vls&ht=tk&f=10294.10295.10296.10297.32106.32108.32112.32114&a=4407135&app=typekit&e=css");
+
+@font-face {
+font-family:"brandon-grotesque";
+src:url("https://use.typekit.net/af/1da05b/0000000000000000000132df/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/1da05b/0000000000000000000132df/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/1da05b/0000000000000000000132df/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"brandon-grotesque";
+src:url("https://use.typekit.net/af/32d3ee/0000000000000000000132e0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/32d3ee/0000000000000000000132e0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/32d3ee/0000000000000000000132e0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-style:italic;font-weight:400;
+}
+
+@font-face {
+font-family:"brandon-grotesque";
+src:url("https://use.typekit.net/af/8f4e31/0000000000000000000132e3/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/8f4e31/0000000000000000000132e3/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/8f4e31/0000000000000000000132e3/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-style:normal;font-weight:700;
+}
+
+@font-face {
+font-family:"brandon-grotesque";
+src:url("https://use.typekit.net/af/383ab4/0000000000000000000132e4/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/383ab4/0000000000000000000132e4/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/383ab4/0000000000000000000132e4/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+font-style:italic;font-weight:700;
+}
+
+@font-face {
+font-family:"calder-dark-outline";
+src:url("https://use.typekit.net/af/7650c4/00000000000000003b9aedf5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/7650c4/00000000000000003b9aedf5/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/7650c4/00000000000000003b9aedf5/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"calder-script";
+src:url("https://use.typekit.net/af/6c23cf/00000000000000003b9aedfa/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/6c23cf/00000000000000003b9aedfa/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/6c23cf/00000000000000003b9aedfa/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"calder-dark-grit";
+src:url("https://use.typekit.net/af/216f93/00000000000000003b9aedf3/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/216f93/00000000000000003b9aedf3/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/216f93/00000000000000003b9aedf3/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"calder-dark";
+src:url("https://use.typekit.net/af/7d3b12/00000000000000003b9aedf2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/7d3b12/00000000000000003b9aedf2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/7d3b12/00000000000000003b9aedf2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+
+/*-------------------GENERAL FONTS AND BASIC SCRIPTS-----------------------*/
+
+$calder: "calder-dark",sans-serif;
+$script: "calder-script",sans-serif;
+$brandon: "brandon-grotesque",sans-serif;
+$grit: "calder-dark-grit",sans-serif;
+$outline: "calder-dark-outline",sans-serif;
+
+.container-fluid {
+  overflow-x: hidden;
+}
+
+body {
+  color : #333333;
+}
+
+.headline {
+  font-size: 7em;
+  font-family: $calder;
+}
+
+.headline-scr {
+  padding:20px;
+  font-size: 3em;
+  font-family: $script;
+  @media screen and (max-width: $break-small) {
+    font-size: 2em;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $calder;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 3em;
+}
+
+h4 {
+  font-size: 2em;
+}
+
+h5 {
+  font-size: 1.66em;
+}
+
+p {
+  font-size: 1.25em;
+  font-family: $brandon;
+}
+
+.brandon {
+  font-family: $brandon;
+}
+
+/*-------------------COLOR & RADIUS VARIABLES-----------------------*/
+
+$white: #fff;
+$beige: #f1e2c5;
+
+$grey1: #333333;
+$grey2: #666666;
+
+$green2: #4A9113;
+$green1: #4CBB41;
+
+$beet1: #B80F6C;
+$beet2: #7C0E5D;
+
+$carrot1: #FF560D;
+$carrot2: #FFA11A;
+
+$brown1: #C69C6D;
+$brown2: #A67C52;
+$brown3: #8C6239;
+
+$bradius: 0px 0px 10px 10px;
+$bround: 3px;
+
+$dirt: linear-gradient($brown3, $brown1);
+
+.beige {
+  background-color: $beige;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.beet {
+  color: $beet1;
+}
+
+.gr {
+  color: $green1;
+}
+
+.gr2 {
+  color: $green2;
+}
+
+.brown {
+  color: $brown2;
+}
+
+.orange {
+  color: $carrot1;
+}
+
+
+/*-------------------NUMBERS BARS FOR STATS-----------------------*/
+
+.text-bar {
+  color: $brown2;
+  display: flex;
+  align-items: center;
+  & .soil {
+    background-image: url('soil-stripes.png');
+    background-repeat: repeat;
+    margin-bottom: 5px;
+    padding: 0px 20px;
+    background-origin: content-box;
+  }
+  & .bar {
+    height:1px;
+    border: solid $brown2 3px;
+    border-radius: $bround;
+  }
+  & .full {
+    height:1px;
+    border: solid $brown2 6px;
+    border-radius: $bround;
+    width:100%;
+  }
+  & .pattern {
+    color: $beet1;
+    & .gr {
+      color: $green1;
+      font-family: $brandon;
+      margin-bottom: 20px;
+    }
+  }
+  & .bar-numbers {
+    display: flex;
+    justify-content: space-evenly;
+    @media screen and (max-width: $break-small) {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: $break-small) {
+      justify-content: center;
+    }
+}
+
+
+/*-------------------1-2 structure for panels-----------------------*/
+
+.panel-short {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: $break-small) {
+    padding-top: 20px;
+    justify-content: center;
+    width: 300px;
+    margin:auto;
+  }
+  & img {
+    width: 90%;
+  }
+  & .imgfr {
+    width: 90%;
+    border: solid $beet1 6px;
+    border-radius: 6px;
+  }
+
+}
+
+
+
+
+/*-------------------misc offsets-----------------------*/
+
+.L40 {
+  float:left;
+  width:60% ;
+  max-width:90px ;
+}
+
+.R40 {
+  float:right;
+  width:60% ;
+  max-width:90px ;
+}
+
+.mt10 {
+  margin-top: 5px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
+}
+
+.m30 {
+  margin:30px;
+}
+
+.p20 {
+  padding: 20px;
+}
+
+/*-------------------NAV FOR THE HOME PAGE-----------------------*/
+
+.white90 {
+  background-color: #ffffff;
+  opacity:.9;
+}
+
+.header-large {
+  background-image: url("header-L.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 620px;
+  margin: 0px -16px 0px -16px ;
+}
+
+.nav-large {
+  padding: 15px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.nav-core {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  @media screen and (max-width: $break-small) {
+    justify-content: center;
+    width: 330px;
+    margin:auto;
+    padding-top: 5px;
+  }
+}
+
+.nav-side {
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: $break-small) {
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 330px;
+    margin:auto;
+    padding-top: 5px;
+  }
+}
+
+.headlines {
+  height:480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+}
+
+.over-logo {
+  width: 66%;
+  @media screen and (max-width: $break-small) {
+    width: 300px;
+    margin:auto;
+  }
+}
+
+
+/*-------------------NAV BUTTONS AND GENERAL BUTTONS-----------------------*/
+
+.btn-form {
+  margin:10px;
+  /*padding:10px;*/
+  max-width:140px;
+  padding-bottom: 3px;
+  border-radius: $bradius;
+}
+
+.btn-menu {
+  border: solid $beet1 6px;
+  font-family: $calder;
+  font-size: 1.6em;
+  line-height: .8em;
+  color: $white;
+  background: $brown1;
+  & .ln2 {
+    font-family: "brandon-grotesque",sans-serif;
+    font-size: .75em;
+  }
+  &:hover {
+    border: solid $green1 6px;
+    color: $white;
+    background: $brown2;
+    background-image: url("dirt-S.png");
+  }
+}
+
+.join {
+    font-family: "brandon-grotesque",sans-serif;
+    font-weight: 700;
+    font-size: 1.25em;
+    padding:15px;
+  }
+
+.btn-green {
+  width:90%;
+  max-width: 100px;
+  padding-bottom: 10px;
+  margin:5px;
+  font-family: $brandon;
+  font-size: .9em;
+  line-height: 1em;
+  color: $white;
+  background: $green1;
+  &:hover {
+    color: $white;
+    background: $green2;
+  }
+}
+
+

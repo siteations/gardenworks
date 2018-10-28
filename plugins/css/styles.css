@@ -1,0 +1,382 @@
+@import url("https://p.typekit.net/p.css?s=1&k=mep7vls&ht=tk&f=10294.10295.10296.10297.32106.32108.32112.32114&a=4407135&app=typekit&e=css");
+@media screen and (max-width: 400px) {
+  .sm-off {
+    display: none;
+  }
+}
+
+.invisible {
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+
+.visible {
+  transition: opacity 1s ease;
+  opacity: 1;
+}
+
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+*/
+@font-face {
+  font-family: "brandon-grotesque";
+  src: url("https://use.typekit.net/af/1da05b/0000000000000000000132df/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/1da05b/0000000000000000000132df/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/1da05b/0000000000000000000132df/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "brandon-grotesque";
+  src: url("https://use.typekit.net/af/32d3ee/0000000000000000000132e0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"), url("https://use.typekit.net/af/32d3ee/0000000000000000000132e0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"), url("https://use.typekit.net/af/32d3ee/0000000000000000000132e0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "brandon-grotesque";
+  src: url("https://use.typekit.net/af/8f4e31/0000000000000000000132e3/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/8f4e31/0000000000000000000132e3/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/8f4e31/0000000000000000000132e3/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "brandon-grotesque";
+  src: url("https://use.typekit.net/af/383ab4/0000000000000000000132e4/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"), url("https://use.typekit.net/af/383ab4/0000000000000000000132e4/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"), url("https://use.typekit.net/af/383ab4/0000000000000000000132e4/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+  font-style: italic;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "calder-dark-outline";
+  src: url("https://use.typekit.net/af/7650c4/00000000000000003b9aedf5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/7650c4/00000000000000003b9aedf5/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/7650c4/00000000000000003b9aedf5/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "calder-script";
+  src: url("https://use.typekit.net/af/6c23cf/00000000000000003b9aedfa/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/6c23cf/00000000000000003b9aedfa/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/6c23cf/00000000000000003b9aedfa/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "calder-dark-grit";
+  src: url("https://use.typekit.net/af/216f93/00000000000000003b9aedf3/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/216f93/00000000000000003b9aedf3/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/216f93/00000000000000003b9aedf3/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "calder-dark";
+  src: url("https://use.typekit.net/af/7d3b12/00000000000000003b9aedf2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/7d3b12/00000000000000003b9aedf2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/7d3b12/00000000000000003b9aedf2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+/*-------------------GENERAL FONTS AND BASIC SCRIPTS-----------------------*/
+.container-fluid {
+  overflow-x: hidden;
+}
+
+body {
+  color: #333333;
+}
+
+.headline {
+  font-size: 7em;
+  font-family: "calder-dark", sans-serif;
+}
+
+.headline-scr {
+  padding: 20px;
+  font-size: 3em;
+  font-family: "calder-script", sans-serif;
+}
+@media screen and (max-width: 400px) {
+  .headline-scr {
+    font-size: 2em;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "calder-dark", sans-serif;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 3em;
+}
+
+h4 {
+  font-size: 2em;
+}
+
+h5 {
+  font-size: 1.66em;
+}
+
+p {
+  font-size: 1.25em;
+  font-family: "brandon-grotesque", sans-serif;
+}
+
+.brandon {
+  font-family: "brandon-grotesque", sans-serif;
+}
+
+/*-------------------COLOR & RADIUS VARIABLES-----------------------*/
+.beige {
+  background-color: #f1e2c5;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.beet {
+  color: #B80F6C;
+}
+
+.gr {
+  color: #4CBB41;
+}
+
+.gr2 {
+  color: #4A9113;
+}
+
+.brown {
+  color: #A67C52;
+}
+
+.orange {
+  color: #FF560D;
+}
+
+/*-------------------NUMBERS BARS FOR STATS-----------------------*/
+.text-bar {
+  color: #A67C52;
+  display: flex;
+  align-items: center;
+}
+.text-bar .soil {
+  background-image: url("soil-stripes.png");
+  background-repeat: repeat;
+  margin-bottom: 5px;
+  padding: 0px 20px;
+  background-origin: content-box;
+}
+.text-bar .bar {
+  height: 1px;
+  border: solid #A67C52 3px;
+  border-radius: 3px;
+}
+.text-bar .full {
+  height: 1px;
+  border: solid #A67C52 6px;
+  border-radius: 3px;
+  width: 100%;
+}
+.text-bar .pattern {
+  color: #B80F6C;
+}
+.text-bar .pattern .gr {
+  color: #4CBB41;
+  font-family: "brandon-grotesque", sans-serif;
+  margin-bottom: 20px;
+}
+.text-bar .bar-numbers {
+  display: flex;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 400px) {
+  .text-bar .bar-numbers {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 400px) {
+  .text-bar {
+    justify-content: center;
+  }
+}
+
+/*-------------------1-2 structure for panels-----------------------*/
+.panel-short {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 400px) {
+  .panel-short {
+    padding-top: 20px;
+    justify-content: center;
+    width: 300px;
+    margin: auto;
+  }
+}
+.panel-short img {
+  width: 90%;
+}
+.panel-short .imgfr {
+  width: 90%;
+  border: solid #B80F6C 6px;
+  border-radius: 6px;
+}
+
+/*-------------------misc offsets-----------------------*/
+.L40 {
+  float: left;
+  width: 60%;
+  max-width: 90px;
+}
+
+.R40 {
+  float: right;
+  width: 60%;
+  max-width: 90px;
+}
+
+.mt10 {
+  margin-top: 5px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
+}
+
+.m30 {
+  margin: 30px;
+}
+
+.p20 {
+  padding: 20px;
+}
+
+/*-------------------NAV FOR THE HOME PAGE-----------------------*/
+.white90 {
+  background-color: #ffffff;
+  opacity: 0.9;
+}
+
+.header-large {
+  background-image: url("header-L.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 620px;
+  margin: 0px -16px 0px -16px;
+}
+
+.nav-large {
+  padding: 15px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.nav-core {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 400px) {
+  .nav-core {
+    justify-content: center;
+    width: 330px;
+    margin: auto;
+    padding-top: 5px;
+  }
+}
+
+.nav-side {
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 400px) {
+  .nav-side {
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 330px;
+    margin: auto;
+    padding-top: 5px;
+  }
+}
+
+.headlines {
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.over-logo {
+  width: 66%;
+}
+@media screen and (max-width: 400px) {
+  .over-logo {
+    width: 300px;
+    margin: auto;
+  }
+}
+
+/*-------------------NAV BUTTONS AND GENERAL BUTTONS-----------------------*/
+.btn-form {
+  margin: 10px;
+  /*padding:10px;*/
+  max-width: 140px;
+  padding-bottom: 3px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.btn-menu {
+  border: solid #B80F6C 6px;
+  font-family: "calder-dark", sans-serif;
+  font-size: 1.6em;
+  line-height: 0.8em;
+  color: #fff;
+  background: #C69C6D;
+}
+.btn-menu .ln2 {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 0.75em;
+}
+.btn-menu:hover {
+  border: solid #4CBB41 6px;
+  color: #fff;
+  background: #A67C52;
+  background-image: url("dirt-S.png");
+}
+
+.join {
+  font-family: "brandon-grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 1.25em;
+  padding: 15px;
+}
+
+.btn-green {
+  width: 90%;
+  max-width: 100px;
+  padding-bottom: 10px;
+  margin: 5px;
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 0.9em;
+  line-height: 1em;
+  color: #fff;
+  background: #4CBB41;
+}
+.btn-green:hover {
+  color: #fff;
+  background: #4A9113;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -90,6 +90,7 @@ $outline: "calder-dark-outline",sans-serif;
 
 body {
   color : #333333;
+  overflow-x: hidden;
 }
 
 .headline {
@@ -139,7 +140,7 @@ h5 {
   font-size: 1.66em;
 }
 
-p {
+p, span {
   font-size: 1.25em;
   font-family: $brandon;
 }
@@ -184,6 +185,10 @@ $dirt: linear-gradient($brown3, $brown1);
   color: $beet1;
 }
 
+.white {
+  color: $white;
+}
+
 .gr {
   color: $green1;
 }
@@ -198,6 +203,18 @@ $dirt: linear-gradient($brown3, $brown1);
 
 .orange {
   color: $carrot1;
+}
+
+.shadow {
+   -moz-box-shadow:    inset 0 0 10px $brown1;
+   -webkit-box-shadow: inset 0 0 10px $brown1;
+   box-shadow:         inset 0 0 10px $brown1;
+}
+
+.shadow2 {
+   -moz-box-shadow:     0 0 10px $brown3;
+   -webkit-box-shadow:  0 0 10px $brown3;
+   box-shadow:          0 0 10px $brown3;
 }
 
 
@@ -290,6 +307,10 @@ $dirt: linear-gradient($brown3, $brown1);
   margin-top: 5px;
 }
 
+.mt0 {
+  margin-top: 0px;
+}
+
 .mb20 {
   margin-bottom: 20px;
 }
@@ -313,6 +334,16 @@ $dirt: linear-gradient($brown3, $brown1);
   opacity:.9;
 }
 
+.white50 {
+  background-color: #ffffff;
+  opacity:.75;
+  position:absolute;
+  bottom: 0px;
+  height: 70%;
+  width: 100%;
+  z-index: -5;
+}
+
 .header-large {
   background-image: url("header-L.jpg");
   background-size: cover;
@@ -326,7 +357,7 @@ $dirt: linear-gradient($brown3, $brown1);
   background-size: cover;
   background-position: center;
   height: 500px;
-  margin: 0px -16px 0px -16px;
+  margin: 0px -16px -30px -16px;
   position: relative;
   top: -30px;
   z-index:-10;
@@ -334,9 +365,12 @@ $dirt: linear-gradient($brown3, $brown1);
 
 .footer-credits {
   background-color: $beet1;
-  margin: 0px -16px 20px -16px;
-  position: relative;
-  top: -30px;
+  color: $white;
+  padding: 5px;
+  margin: 0px -16px 0px -16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .nav-large {
@@ -444,6 +478,10 @@ $dirt: linear-gradient($brown3, $brown1);
     padding:15px;
   }
 
+.block {
+  width:100%;
+}
+
 .btn-green {
   width:90%;
   max-width: 100px;
@@ -474,12 +512,15 @@ $dirt: linear-gradient($brown3, $brown1);
   border: solid $beet1 6px;
   color: $beet1;
   background: $white;
-  line-height: 1em;
+  line-height: 1.1em;
   margin:10px;
   padding:10px;
   width:240px;
   padding-bottom: 3px;
   border-radius: $bradius;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   & .date {
     font-family: "brandon-grotesque",sans-serif;
     font-size: .75em;
@@ -514,4 +555,19 @@ $dirt: linear-gradient($brown3, $brown1);
     font-size: 1em;
     line-height: 1.1em;
   }
+}
+
+.trans {
+    border: none;
+    color: $grey1;
+    background: none;
+    & p {
+      color: $grey1;
+    }
+  }
+
+input {
+  font-family: "brandon-grotesque",sans-serif;
+  margin-bottom: 10px;
+  border-radius: $bradius !important;
 }

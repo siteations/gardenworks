@@ -23,7 +23,7 @@ Normal theme
 	color: #fff;
 	/*text-transform: uppercase;*/
 	letter-spacing: 1px;
-     background-color: #8C6239;
+     background-color: #B80F6C;
      padding: 7px 14px 8px 14px;
      border-radius: 10px;
 }
@@ -37,8 +37,7 @@ Normal theme
 .tipr_point_above, .tipr_point_below
 {
      position: relative;
-	background: #8C6239;
-	border: 1px solid #f1f1f1;
+	background: #B80F6C;
 	border-radius: 3px 3px 10px 10px ;
 }
 .tipr_point_above:after, .tipr_point_below:after
@@ -56,10 +55,10 @@ Normal theme
 .tipr_point_above:after
 {
 	top: 100%;
-	border-top-color: #8C6239;
+	border-top-color: #B80F6C;
 }
 .tipr_point_below:after
 {
 	bottom: 100%;
-	border-bottom-color: #8C6239;
+	border-bottom-color: #B80F6C;
 }

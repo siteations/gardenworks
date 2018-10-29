@@ -106,6 +106,15 @@ body {
   }
 }
 
+.script {
+  font-size: 2em;
+  font-family: $script;
+}
+
+.lrg-icon {
+  font-size: 3em;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: $calder;
 }
@@ -250,7 +259,7 @@ $dirt: linear-gradient($brown3, $brown1);
     margin:auto;
   }
   & img {
-    width: 90%;
+    width: 100%;
   }
   & .imgfr {
     width: 90%;
@@ -310,6 +319,24 @@ $dirt: linear-gradient($brown3, $brown1);
   background-position: center;
   height: 620px;
   margin: 0px -16px 0px -16px ;
+}
+
+.footer-large {
+  background-image: url("footer.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  margin: 0px -16px 0px -16px;
+  position: relative;
+  top: -30px;
+  z-index:-10;
+}
+
+.footer-credits {
+  background-color: $beet1;
+  margin: 0px -16px 20px -16px;
+  position: relative;
+  top: -30px;
 }
 
 .nav-large {
@@ -393,6 +420,23 @@ $dirt: linear-gradient($brown3, $brown1);
   }
 }
 
+.btn-menu2 {
+  border: solid $white 6px;
+  font-family: $calder;
+  font-size: 1.6em;
+  line-height: .8em;
+  color: $white;
+  background: $brown3;
+  & .ln2 {
+    font-family: "brandon-grotesque",sans-serif;
+    font-size: .75em;
+  }
+  &:hover {
+    color: $white;
+    background: $beet1;
+  }
+}
+
 .join {
     font-family: "brandon-grotesque",sans-serif;
     font-weight: 700;
@@ -416,4 +460,58 @@ $dirt: linear-gradient($brown3, $brown1);
   }
 }
 
+.next {
+  &:hover {
+    color: $green2;
+  }
+}
 
+
+/*-------------------CARDS-----------------------*/
+
+
+.cards {
+  border: solid $beet1 6px;
+  color: $beet1;
+  background: $white;
+  line-height: 1em;
+  margin:10px;
+  padding:10px;
+  width:240px;
+  padding-bottom: 3px;
+  border-radius: $bradius;
+  & .date {
+    font-family: "brandon-grotesque",sans-serif;
+    font-size: .75em;
+    color: $green1;
+  }
+  & .title {
+    font-family: $calder;
+    font-size: 1.25em;
+  }
+  & li {
+    color: $green1;
+    font-family: "brandon-grotesque",sans-serif;
+    font-size: 1.25em;
+    list-style: none;
+    line-height: 1.5em;
+  }
+  & p {
+    color: $green1;
+  }
+  & .cards-feature {
+    width:100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    &:hover {
+      border: solid $beet1 6px;
+    }
+  }
+}
+
+.volunteer {
+  & p {
+    font-size: 1em;
+    line-height: 1.1em;
+  }
+}

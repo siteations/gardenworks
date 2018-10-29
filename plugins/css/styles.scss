@@ -78,6 +78,30 @@ font-style:normal;font-weight:400;
 
 /*-------------------GENERAL FONTS AND BASIC SCRIPTS-----------------------*/
 
+$white: #fff;
+$beige: #f1e2c5;
+
+$grey1: #333333;
+$grey2: #666666;
+
+$green2: #4A9113;
+$green1: #4CBB41;
+
+$beet1: #B80F6C;
+$beet2: #7C0E5D;
+
+$carrot1: #FF560D;
+$carrot2: #FFA11A;
+
+$brown1: #C69C6D;
+$brown2: #A67C52;
+$brown3: #8C6239;
+
+$bradius: 0px 0px 10px 10px;
+$bround: 3px;
+
+$dirt: linear-gradient($brown3, $brown1);
+
 $calder: "calder-dark",sans-serif;
 $script: "calder-script",sans-serif;
 $brandon: "brandon-grotesque",sans-serif;
@@ -143,6 +167,13 @@ h5 {
 p, span {
   font-size: 1.25em;
   font-family: $brandon;
+  & a {
+  color: $beige;
+    &:hover {
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
 }
 
 .brandon {
@@ -151,34 +182,15 @@ p, span {
 
 /*-------------------COLOR & RADIUS VARIABLES-----------------------*/
 
-$white: #fff;
-$beige: #f1e2c5;
-
-$grey1: #333333;
-$grey2: #666666;
-
-$green2: #4A9113;
-$green1: #4CBB41;
-
-$beet1: #B80F6C;
-$beet2: #7C0E5D;
-
-$carrot1: #FF560D;
-$carrot2: #FFA11A;
-
-$brown1: #C69C6D;
-$brown2: #A67C52;
-$brown3: #8C6239;
-
-$bradius: 0px 0px 10px 10px;
-$bround: 3px;
-
-$dirt: linear-gradient($brown3, $brown1);
 
 .beige {
   background-color: $beige;
   margin-right: 5%;
   margin-left: 5%;
+}
+
+.beige-t {
+  color: $beige;
 }
 
 .beet {
@@ -195,6 +207,14 @@ $dirt: linear-gradient($brown3, $brown1);
 
 .gr2 {
   color: $green2;
+}
+
+.grbk {
+  background-color: $brown2;
+  border-radius: $bradius;
+  border: solid $white 6px;
+  padding: 10px;
+  width:280px;
 }
 
 .brown {
@@ -308,7 +328,7 @@ $dirt: linear-gradient($brown3, $brown1);
 }
 
 .mt0 {
-  margin-top: 0px;
+  margin: 0px;
 }
 
 .mb20 {
@@ -360,7 +380,6 @@ $dirt: linear-gradient($brown3, $brown1);
   margin: 0px -16px -30px -16px;
   position: relative;
   top: -30px;
-  z-index:-10;
 }
 
 .footer-credits {
@@ -521,6 +540,7 @@ $dirt: linear-gradient($brown3, $brown1);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  z-index: 2;
   & .date {
     font-family: "brandon-grotesque",sans-serif;
     font-size: .75em;
@@ -559,10 +579,12 @@ $dirt: linear-gradient($brown3, $brown1);
 
 .trans {
     border: none;
-    color: $grey1;
+    margin:0px;
+    color: $white;
     background: none;
+    line-height: 1.5em;
     & p {
-      color: $grey1;
+      color: $white;
     }
   }
 

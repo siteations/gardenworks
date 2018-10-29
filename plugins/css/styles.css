@@ -132,6 +132,13 @@ p, span {
   font-size: 1.25em;
   font-family: "brandon-grotesque", sans-serif;
 }
+p a, span a {
+  color: #f1e2c5;
+}
+p a:hover, span a:hover {
+  text-decoration: none;
+  font-weight: 700;
+}
 
 .brandon {
   font-family: "brandon-grotesque", sans-serif;
@@ -142,6 +149,10 @@ p, span {
   background-color: #f1e2c5;
   margin-right: 5%;
   margin-left: 5%;
+}
+
+.beige-t {
+  color: #f1e2c5;
 }
 
 .beet {
@@ -158,6 +169,14 @@ p, span {
 
 .gr2 {
   color: #4A9113;
+}
+
+.grbk {
+  background-color: #A67C52;
+  border-radius: 0px 0px 10px 10px;
+  border: solid #fff 6px;
+  padding: 10px;
+  width: 280px;
 }
 
 .brown {
@@ -268,7 +287,7 @@ p, span {
 }
 
 .mt0 {
-  margin-top: 0px;
+  margin: 0px;
 }
 
 .mb20 {
@@ -319,7 +338,6 @@ p, span {
   margin: 0px -16px -30px -16px;
   position: relative;
   top: -30px;
-  z-index: -10;
 }
 
 .footer-credits {
@@ -479,6 +497,7 @@ p, span {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  z-index: 2;
 }
 .cards .date {
   font-family: "brandon-grotesque", sans-serif;
@@ -515,11 +534,13 @@ p, span {
 
 .trans {
   border: none;
-  color: #333333;
+  margin: 0px;
+  color: #fff;
   background: none;
+  line-height: 1.5em;
 }
 .trans p {
-  color: #333333;
+  color: #fff;
 }
 
 input {

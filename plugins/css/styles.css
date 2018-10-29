@@ -1,10 +1,4 @@
 @import url("https://p.typekit.net/p.css?s=1&k=mep7vls&ht=tk&f=10294.10295.10296.10297.32106.32108.32112.32114&a=4407135&app=typekit&e=css");
-@media screen and (max-width: 400px) {
-  .sm-off {
-    display: none;
-  }
-}
-
 .invisible {
   transition: opacity 1s ease;
   opacity: 0;
@@ -89,7 +83,7 @@ body {
   font-size: 3em;
   font-family: "calder-script", sans-serif;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .headline-scr {
     font-size: 2em;
   }
@@ -235,12 +229,12 @@ p a:hover, span a:hover {
   display: flex;
   justify-content: space-evenly;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .text-bar .bar-numbers {
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .text-bar {
     justify-content: center;
   }
@@ -252,7 +246,7 @@ p a:hover, span a:hover {
   align-items: center;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .panel-short {
     padding-top: 20px;
     justify-content: center;
@@ -347,7 +341,7 @@ p a:hover, span a:hover {
   margin: 0px -16px 0px -16px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .nav-large {
@@ -364,7 +358,7 @@ p a:hover, span a:hover {
   justify-content: space-around;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .nav-core {
     justify-content: center;
     width: 330px;
@@ -378,7 +372,7 @@ p a:hover, span a:hover {
   display: flex;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .nav-side {
     flex-wrap: nowrap;
     justify-content: center;
@@ -400,7 +394,7 @@ p a:hover, span a:hover {
 .over-logo {
   width: 66%;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .over-logo {
     width: 300px;
     margin: auto;
@@ -547,6 +541,19 @@ input {
   font-family: "brandon-grotesque", sans-serif;
   margin-bottom: 10px;
   border-radius: 0px 0px 10px 10px !important;
+}
+
+/*-----------------hidding elements------------------*/
+@media screen and (max-width: 425px) {
+  .sm-off {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .med-off {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

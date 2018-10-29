@@ -1,11 +1,6 @@
-$break-small: 400px;
+$break-small: 425px;
+$break-medium: 1024px;
 $break-large: 1200px;
-
-.sm-off {
-  @media screen and (max-width: $break-small) {
-    display: none;
-  }
-}
 
 .invisible {
   transition: opacity 1s ease;
@@ -389,7 +384,7 @@ p, span {
   margin: 0px -16px 0px -16px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .nav-large {
@@ -592,4 +587,19 @@ input {
   font-family: "brandon-grotesque",sans-serif;
   margin-bottom: 10px;
   border-radius: $bradius !important;
+}
+
+
+/*-----------------hidding elements------------------*/
+
+.sm-off {
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+}
+
+.med-off {
+  @media screen and (max-width: $break-medium) {
+    display: none;
+  }
 }

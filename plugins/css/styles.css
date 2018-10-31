@@ -69,7 +69,7 @@
 }
 
 body {
-  color: #333333;
+  color: #666666;
   overflow-x: hidden;
 }
 
@@ -134,6 +134,10 @@ p a:hover, span a:hover {
   font-weight: 700;
 }
 
+.grit {
+  font-family: "calder-dark-grit", sans-serif;
+}
+
 .brandon {
   font-family: "brandon-grotesque", sans-serif;
 }
@@ -143,6 +147,12 @@ p a:hover, span a:hover {
   background-color: #f1e2c5;
   margin-right: 5%;
   margin-left: 5%;
+}
+
+.beigeW {
+  background-color: #f1e2c5;
+  margin-right: -16px;
+  margin-left: -16px;
 }
 
 .beige-t {
@@ -179,6 +189,10 @@ p a:hover, span a:hover {
 
 .orange {
   color: #FF560D;
+}
+
+.bradius {
+  border-radius: 0px 0px 10px 10px;
 }
 
 .shadow {
@@ -324,6 +338,21 @@ p a:hover, span a:hover {
   margin: 0px -16px 0px -16px;
 }
 
+.header-med {
+  background-image: url("header2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  margin: 0px -16px 0px -16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom {
+  display: flex;
+}
+
 .footer-large {
   background-image: url("footer.jpg");
   background-size: cover;
@@ -399,6 +428,10 @@ p a:hover, span a:hover {
     width: 300px;
     margin: auto;
   }
+}
+
+.p0 {
+  padding-top: 0px;
 }
 
 /*-------------------NAV BUTTONS AND GENERAL BUTTONS-----------------------*/
@@ -478,6 +511,11 @@ p a:hover, span a:hover {
 }
 
 /*-------------------CARDS-----------------------*/
+.beetB {
+  border: solid #B80F6C 6px;
+  border-radius: 0px 0px 10px 10px;
+}
+
 .cards {
   border: solid #B80F6C 6px;
   color: #B80F6C;
@@ -490,7 +528,6 @@ p a:hover, span a:hover {
   border-radius: 0px 0px 10px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   z-index: 2;
 }
 .cards .date {
@@ -554,6 +591,10 @@ input {
   .med-off {
     display: none;
   }
+}
+
+.text {
+  position: relative;
 }
 
 /*# sourceMappingURL=styles.css.map */

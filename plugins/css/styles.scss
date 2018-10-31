@@ -108,7 +108,7 @@ $outline: "calder-dark-outline",sans-serif;
 }
 
 body {
-  color : #333333;
+  color : $grey2;
   overflow-x: hidden;
 }
 
@@ -171,6 +171,10 @@ p, span {
   }
 }
 
+.grit {
+  font-family: $grit;
+}
+
 .brandon {
   font-family: $brandon;
 }
@@ -182,6 +186,12 @@ p, span {
   background-color: $beige;
   margin-right: 5%;
   margin-left: 5%;
+}
+
+.beigeW {
+  background-color: $beige;
+      margin-right: -16px;
+    margin-left: -16px;
 }
 
 .beige-t {
@@ -218,6 +228,10 @@ p, span {
 
 .orange {
   color: $carrot1;
+}
+
+.bradius {
+  border-radius: $bradius;
 }
 
 .shadow {
@@ -342,12 +356,15 @@ p, span {
   padding: 20px;
 }
 
+
 /*-------------------NAV FOR THE HOME PAGE-----------------------*/
 
 .white90 {
   background-color: #ffffff;
   opacity:.9;
 }
+
+
 
 .white50 {
   background-color: #ffffff;
@@ -365,6 +382,21 @@ p, span {
   background-position: center;
   height: 620px;
   margin: 0px -16px 0px -16px ;
+}
+
+.header-med {
+  background-image: url("header2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  margin: 0px -16px 0px -16px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom {
+  display: flex;
 }
 
 .footer-large {
@@ -438,6 +470,9 @@ p, span {
   }
 }
 
+.p0 {
+  padding-top: 0px;
+}
 
 /*-------------------NAV BUTTONS AND GENERAL BUTTONS-----------------------*/
 
@@ -521,6 +556,10 @@ p, span {
 
 /*-------------------CARDS-----------------------*/
 
+.beetB {
+  border: solid $beet1 6px;
+  border-radius: $bradius;
+}
 
 .cards {
   border: solid $beet1 6px;
@@ -534,7 +573,6 @@ p, span {
   border-radius: $bradius;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   z-index: 2;
   & .date {
     font-family: "brandon-grotesque",sans-serif;
@@ -572,6 +610,7 @@ p, span {
   }
 }
 
+
 .trans {
     border: none;
     margin:0px;
@@ -602,4 +641,9 @@ input {
   @media screen and (max-width: $break-medium) {
     display: none;
   }
+}
+
+.text {
+  position:relative;
+
 }

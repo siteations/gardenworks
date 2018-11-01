@@ -132,6 +132,7 @@ p a, span a {
 p a:hover, span a:hover {
   text-decoration: none;
   font-weight: 700;
+  color: #f1e2c5;
 }
 
 .grit {
@@ -257,7 +258,7 @@ p a:hover, span a:hover {
 /*-------------------1-2 structure for panels-----------------------*/
 .panel-short {
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   flex-wrap: wrap;
 }
 @media screen and (max-width: 425px) {
@@ -310,6 +311,10 @@ p a:hover, span a:hover {
   margin: 30px;
 }
 
+.mtb30 {
+  margin: 30px 0px 30px 0px;
+}
+
 .p20 {
   padding: 20px;
 }
@@ -349,6 +354,12 @@ p a:hover, span a:hover {
   justify-content: space-between;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .bottom {
   display: flex;
 }
@@ -371,6 +382,10 @@ p a:hover, span a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.navbar {
+  margin-bottom: 0px;
 }
 
 .nav-large {
@@ -510,6 +525,39 @@ p a:hover, span a:hover {
   color: #4A9113;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 5px;
+}
+.dropdown-content li {
+  list-style: none;
+  background-color: #fff;
+}
+.dropdown-content a {
+  color: #666666;
+}
+.dropdown-content a:hover {
+  color: #B80F6C;
+  background-color: #fff;
+}
+.dropdown-content:hover {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /*-------------------CARDS-----------------------*/
 .beetB {
   border: solid #B80F6C 6px;
@@ -523,7 +571,7 @@ p a:hover, span a:hover {
   line-height: 1.1em;
   margin: 10px;
   padding: 10px;
-  width: 240px;
+  width: 280px;
   padding-bottom: 3px;
   border-radius: 0px 0px 10px 10px;
   display: flex;
@@ -548,6 +596,8 @@ p a:hover, span a:hover {
 }
 .cards p {
   color: #4CBB41;
+  font-size: 1.1em;
+  line-height: 1.25em;
 }
 .cards .cards-feature {
   width: 100%;
@@ -595,6 +645,11 @@ input {
 
 .text {
   position: relative;
+}
+
+.main-container {
+  margin-bottom: 10px;
+  margin-top: 0px;
 }
 
 /*# sourceMappingURL=styles.css.map */

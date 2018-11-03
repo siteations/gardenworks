@@ -296,7 +296,7 @@ p, span {
 
 .panel-short {
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   flex-wrap: wrap;
   @media screen and (max-width: $break-small) {
     padding-top: 20px;
@@ -315,7 +315,11 @@ p, span {
 
 }
 
-
+.flex-col {
+  display: flex;
+  flex-direction:column;
+  justify-content: space-evenly;
+}
 
 
 /*-------------------misc offsets-----------------------*/
@@ -474,6 +478,11 @@ p, span {
   padding-top: 0px;
 }
 
+.nav-small {
+  display: flex;
+  align-items: center;
+}
+
 /*-------------------NAV BUTTONS AND GENERAL BUTTONS-----------------------*/
 
 .btn-form {
@@ -566,6 +575,8 @@ p, span {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 5px;
+  bottom: 0px;
+  border-radius: $bradius;
   & li {
     list-style: none;
     background-color: #fff;
@@ -678,5 +689,21 @@ input {
 
 .text {
   position:relative;
+}
 
+
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.main-container {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+
+.navbar-static-top {
+    z-index: 1000;
+    border-width: 0 0 0px;
 }

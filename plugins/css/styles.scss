@@ -78,6 +78,7 @@ $beige: #f1e2c5;
 
 $grey1: #333333;
 $grey2: #666666;
+$grey3: #d0d0d0;
 
 $green2: #4A9113;
 $green1: #4CBB41;
@@ -159,6 +160,11 @@ h5 {
   font-size: 1.66em;
 }
 
+label {
+  font-size: 1.25em;
+  font-family: $brandon;
+}
+
 p, span {
   font-size: 1.25em;
   font-family: $brandon;
@@ -169,6 +175,11 @@ p, span {
       font-weight: 700;
     }
   }
+}
+
+strong {
+    font-weight: 700;
+    font-family: $brandon;
 }
 
 .grit {
@@ -312,6 +323,14 @@ p, span {
     border: solid $beet1 6px;
     border-radius: 6px;
   }
+  & a {
+    color: $beet1;
+    &:hover {
+      color: $green1;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
 
 }
 
@@ -348,6 +367,10 @@ p, span {
   margin-bottom: 20px;
 }
 
+.mb0 {
+  margin-bottom: 0px;
+}
+
 .pb20 {
   padding-bottom: 20px;
 }
@@ -381,7 +404,7 @@ p, span {
 }
 
 .header-large {
-  background-image: url("header-L.jpg");
+  background-image: url("header1.jpg");
   background-size: cover;
   background-position: center;
   height: 620px;
@@ -493,6 +516,16 @@ p, span {
   border-radius: $bradius;
 }
 
+.tag {
+  background-color: $grey3;
+  color: $white;
+  padding: 3px;
+  width: 40%;
+  margin: 5px 0px;
+  font-family: $brandon;
+  font-size: 1em;
+}
+
 .btn-menu {
   border: solid $beet1 6px;
   font-family: $calder;
@@ -541,14 +574,22 @@ p, span {
 }
 
 .btn-green {
-  width:90%;
-  max-width: 100px;
+  /*width:90%;*/
+  min-width: 100px;
   padding-bottom: 10px;
   margin:5px;
   font-family: $brandon;
-  font-size: .9em;
-  line-height: 1em;
-  color: $white;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  color:  $white;
+  & a {
+    color: $white;
+    &:hover {
+      color: $white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
   background: $green1;
   &:hover {
     color: $white;
@@ -597,6 +638,10 @@ p, span {
   display: block;
 }
 
+.dropdown-home {
+  bottom: inherit;
+}
+
 
 /*-------------------CARDS-----------------------*/
 
@@ -609,10 +654,10 @@ p, span {
   border: solid $beet1 6px;
   color: $beet1;
   background: $white;
-  line-height: 1.1em;
+  line-height: 1.5em;
   margin:10px;
   padding:10px;
-  width:240px;
+  width:280px;
   padding-bottom: 3px;
   border-radius: $bradius;
   display: flex;
@@ -672,6 +717,12 @@ input {
   border-radius: $bradius !important;
 }
 
+.input {
+  font-family: "brandon-grotesque",sans-serif;
+  margin-bottom: 10px !important;
+  border-radius: $bradius !important;
+}
+
 
 /*-----------------hidding elements------------------*/
 
@@ -706,4 +757,9 @@ input {
 .navbar-static-top {
     z-index: 1000;
     border-width: 0 0 0px;
+}
+
+
+.flexslider {
+  display:none
 }

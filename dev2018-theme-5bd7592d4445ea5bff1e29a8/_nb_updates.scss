@@ -1,0 +1,135 @@
+//donation v2 page
+.page-pages-show-donation-v2-wide {
+  .ticket-list {
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      li {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+  .main.container {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .navbar-header .navbar-brand {
+    max-width: 150px;
+  }
+  .donation-v2-occurence-radio {
+    position: relative;
+    height: 34px;
+    .form-group {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    label {
+      display: inline-block;
+      margin: 0 10px 0 0;
+    }
+  }
+  .form-control.card-field {
+    padding-top: 8px;
+  }
+  .donation-other-input-container {
+    position: relative;
+    .currency-symbol {
+      color: #000;
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      font-size: 16px;
+      transform: translate(0, -50%);
+    }
+    input {
+      @extend .form-control;
+      padding-left: 30px;
+    }
+    .nb_donation_amount {
+      padding-left: 20px;
+    }
+  }
+  .submit-container {
+    margin-top: 0px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 35px;
+    .donation-v2-amount {
+      font-size: 40px;
+      margin-bottom: 25px;
+      width: 100%;
+      min-height: 46px;
+      line-height: initial;
+      span {
+        opacity: 1;
+        font-weight: bold;
+        display: inline-block;
+        .nb_donation_v2_interval {
+          font-size: 17px;
+          font-weight: normal;
+          &.hidden {
+            display: none;
+            opacity: 0;
+          }
+        }
+        &.hidden {
+          opacity: 0;
+          display: none;
+          +span {
+            font-size: 22px;
+            font-weight: normal;
+          }
+          ~.nb_donation_v2_interval {
+            display: none;
+          }
+        }
+      }
+      .nb_donation_v2_amount {
+        margin-left: 4px;
+      }
+    }
+  }
+  .donation-v2-amounts.radio-inline {
+    padding-left: 0;
+    label {
+      @extend .btn;
+      @extend .btn-default;
+      margin: 5px 10px 5px 0;
+      font-size: 20px;
+    }
+    input[type="radio"]:checked+label {
+      @extend .active;
+      background-color: #337ab7;
+      color: #FFF;
+      box-shadow: none;
+    }
+    input,
+    #donation_amount_other {
+      display: none;
+    }
+  }
+  .donation-v2-input {
+    @extend .form-control;
+    padding-top: 8px;
+  }
+  footer,
+  .main.container {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-pages-show-donation-v2-wide {
+    footer,
+    .main.container {
+      padding: 0;
+    }
+  }
+}

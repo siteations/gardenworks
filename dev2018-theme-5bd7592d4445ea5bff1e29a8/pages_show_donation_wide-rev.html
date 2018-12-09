@@ -1,0 +1,64 @@
+{% include "breadcrumbs" %}
+<div id="content">
+    <div class="row-fluid staged-donation-container">
+        <!-- .span6 -->
+        <div class="span6 staged-donation-content">
+
+        <div class="row">
+              <div class="col-sm-8 col-sm-offset-2 nav-core">
+                <h4 class="beet">{{page.headline}}</h4>
+            {% assign content = page.donation.content | strip_html %}
+              <h5 class="brandon gr2"><em>{{page.donation.content | strip_html }}</em></h5>
+              </div>
+        </div>
+
+
+            <div class="row pb20 mt20">
+                <div class="col-sm-8 col-sm-offset-2 panel-short">
+                    <div class="donate-impact col-sm-4 p20">
+                    </div>
+                    <div class="col-sm-8 p20">
+                        <h5 class="beet">make your contribution online</h5>
+                        <p> with our secure payment method:</p>
+                        {% include 'donations' %}
+                        <br>
+                        {% if page.slug == 'give' %}
+                        <p><strong class="gr2">If you prefer, mail your payment: </strong><br>The GardenWorks Project, PO Box 615, West Chicago, IL 60186.</p><br>
+                        <p><strong>Do you prefer to give monthly? <a href="/give_monthly">Visit our monthly giving page.</a></strong></p>
+                        {% elsif page.slug == 'give_monthly'%}
+                        <p><strong>Do you prefer make a single donation? <a href="/give">Click here.</a></strong></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center m30">
+                <h4 class="gr2">Your Contributions' Impact</h4>
+            </div>
+            <div class="row text-center">
+            <div class="donate-effect col-sm-8 col-sm-offset-2 panel-short">
+            </div>
+          </div>
+            <div class="donate-parent" style="display:none;">
+                {{page.parent.donation.content}}
+            </div>
+        </div>
+    </div><!-- .row-fluid -->
+    {% if page.donation.content.size > 0 %}
+    <div id="end" class="row">
+        <div class="col-sm-8 col-sm-offset-2 panel-short text-center">
+            {{ page.donation.content }}
+        </div>
+    </div>
+    {% endif %}
+    {% include 'join-us' %}
+    {% comment %}
+    {% if page.tags_count > 0 %}
+    <div class="page-tags">
+        {% include "page_tags" with page %}
+    </div>
+    {% endif %}
+    {% if page.show_stream? %}
+    {% include "page_stream" %}
+    {% endif %}
+    {% endcomment %}
+</div>

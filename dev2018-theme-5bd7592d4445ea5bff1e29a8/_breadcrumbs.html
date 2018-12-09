@@ -1,0 +1,55 @@
+{% if page.level > 0 %}
+{% assign home = page.parent %}
+{% else %}
+{% assign home = page %}
+{% endif %}
+
+{% assign split = page.title | split: '-' %}
+{% assign cut = page.parent.slug %}
+
+
+{% if page.type_slug == "blog_post" %}
+  {% assign top = page.published_at | date: '%b %d, %Y' %}
+  {% assign middle = page.title %}
+{% elsif page.type_slug == "event" or page.slug == "volunteer_waiver"%}
+  {% assign top = 'join us' %}
+  {% assign middle = page.title %}
+{% elsif page.slug == "corporate_sponsorship" %}
+  {% assign top = page.parent.slug | append: ' & who' %}
+  {% assign middle = page.title %}
+{% else %}
+  {% assign top = page.parent.slug %}
+  {% assign middle = page.title %}
+{% endif %}
+
+<div class="mb20 beigeW">
+      <!--top-->
+        <div class="row text-bar">
+          <div class="col-sm-2 col-sm-offset-2 bar">
+          </div>
+          <div class="col-sm-4">
+            <h3 class="brown-t text-center beet">{{top}}</h3>
+          </div>
+          <div class="col-sm-2 bar">
+          </div>
+        </div>
+      <!--middle-->
+        <div class="row text-bar">
+          <div class="col-sm-2">
+            <img src="trowel_l2.png" class="R40"/>
+          </div>
+          <div class="col-sm-8 soil text-center">
+              <h2 class="mt0 gr2 grit">{{ middle }}</h2>
+              <h4 class="mt0 gr2 grit">{{ page.headline }}</h4>
+              <h5 class="script beet">everyone deserves fresh produce</h5>
+          </div>
+          <div class="col-sm-2">
+            <img src="trowel_r2.png" class="L40"/>
+          </div>
+        </div>
+      <!--bottom-->
+        <div class="row text-bar pb20">
+          <div class="col-sm-8 col-sm-offset-2 bar">
+          </div>
+        </div>
+      </div>

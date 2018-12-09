@@ -1,0 +1,47 @@
+<div class="span4 footer-left footer-supporter-tiles-wrap">
+                <!-- Jess: Add an If Statement here, if already signed up for Newsletter, show something else here - like Events or Volunteer signup?? -->
+                <h4 class="white">Newsletter</h4>
+                <div class="footer-supporter-tiles ">
+
+		<form id="newsletter_signup_page_new_signup_form" class="ajaxForm signup_form" method="POST" action="/forms/signups" enctype="multipart/form-data"><input name="authenticity_token" type="hidden" value="YM+bApWnteBuUgjOY2jVLsComT/7Jm3FbWB6Q6iXu+s="><input name="page_id" type="hidden" value="4"><input name="return_to" type="hidden" value="http://www.gardenworksproject.org/newsletter_signup"><div class="email_address_form" style="display:none;" aria-hidden="true"><p><label for="email_address">Optional email code</label><br><input name="email_address" type="text" class="text" id="email_address" autocomplete="off"></p></div>
+<style>
+  footer-label{
+    border-radius: 0;
+    font-family: "Lato",Helvetica,Arial,sans-serif;
+    color: #f6f7f8;
+    border-color: #eee;
+    font-size: 1em;
+    font-weight: normal;
+  }
+  footer-input{
+    font-size: 18px;
+    border: 4px solid #999;
+    padding: 8px 90px 8px 20px;
+  }
+</style>
+   		<div class="form-errors"></div>
+
+			 	<!--<div class="row-fluid">
+          <div><label for="signup_first_name" class="footer-label">First Name</label><input class="text footer-input" id="signup_first_name" name="signup[first_name]" type="text" value="Meg"></div>
+				</div>
+      <div class="row-fluid">
+          <div><label for="signup_last_name" class="footer-label">Last Name</label><input class="text footer-input" id="signup_last_name" name="signup[last_name]" type="text" value="Studer"></div>
+        </div>
+      <div class="row-fluid">
+          <div><label for="signup_email">Email</label><input class="text" id="signup_email" name="signup[email]" type="email" value="studer@siteations.com"></div>
+        </div>
+      -->
+
+        <input type="text" class="form-control footer-input" id="signup_first_name" name="signup[first_name]" type="text" placeholder="First Name">
+        <input type="text" class="form-control footer-input" id="signup_last_name" name="signup[last_name]" type="text" placeholder="Last Name">
+        <input type="text" class="form-control footer-input" id="signup_email" name="signup[last_name]" type="text" placeholder="Email">
+
+      <div class="row-fluid">
+        <input class="submit-button btn btn-form btn-menu2 join" type="submit" name="commit" value="Subscribe">
+			</div>
+      <div class="form-submit"></div>
+
+      </form>
+  <!--Jess created _footer_signup-->
+                </div> <!-- footer-support-tiles -->
+              </div>

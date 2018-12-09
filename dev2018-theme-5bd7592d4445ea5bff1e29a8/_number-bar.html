@@ -1,0 +1,8 @@
+{% assign new_array = tag.most_recent_published_pages | sort: 'excerpt' %}
+            {% for num in new_array  %}
+            <div class="col-sm-3 pattern">
+              <h1 class="text-center count">{{num.title}}</h1>
+              <h5 class="text-center gr">{{num.headline}}</h5>
+            </div>
+            {% endfor %}
+

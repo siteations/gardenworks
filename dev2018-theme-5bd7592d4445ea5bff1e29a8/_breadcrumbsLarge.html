@@ -1,0 +1,44 @@
+{% if page.level > 0 %}
+{% assign home = page.parent %}
+{% else %}
+{% assign home = page %}
+{% endif %}
+
+{% assign split = page.title | split: '-' %}
+
+<p>{{ split[0] }}</p>
+<p>{{ split[1] }}</p>
+<p>{{ page.headline }}</p>
+
+
+<div class="mb20 beigeW">
+      <!--top-->
+        <div class="row text-bar">
+          <div class="col-sm-2 col-sm-offset-2 bar">
+          </div>
+          <div class="col-sm-4">
+            <h3 class="brown-t text-center beet">got here</h3>
+          </div>
+          <div class="col-sm-2 bar">
+          </div>
+        </div>
+      <!--middle-->
+        <div class="row text-bar">
+          <div class="col-sm-2">
+            <img src="./img/trowel_L.svg" class="R40"/>
+          </div>
+          <div class="col-sm-8 soil text-center">
+              <h2 class="mt0 gr2 grit">{{ split[1] }}</h2>
+              <h4 class="mt0 gr2 grit">{{ page.headline }}</h4>
+              <h5 class="script beet">everyone deserves fresh produce</h5>
+          </div>
+          <div class="col-sm-2">
+            <img src="./img/trowel_R.svg" class="L40"/>
+          </div>
+        </div>
+      <!--bottom-->
+        <div class="row text-bar pb20">
+          <div class="col-sm-8 col-sm-offset-2 bar">
+          </div>
+        </div>
+      </div>

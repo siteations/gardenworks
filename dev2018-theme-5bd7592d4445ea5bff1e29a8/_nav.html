@@ -1,0 +1,129 @@
+{% if page.type_name == "Donation (v2)" %}
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      {% if site.has_meta_image? %}
+        <a class="navbar-brand" href="/"><img alt="{{ site.long_name }}" src="{{ site.meta_image_url }}"></a>
+      {% else %}
+        <a class="navbar-brand" href="/">{{ site.long_name }}</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+{% elsif page.is_homepage? == false %}
+
+<nav class="navbar navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    {% comment %}
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {% if site.has_meta_image? %}
+        <a class="navbar-brand" href="/"><img alt="{{ site.long_name }}" src="{{ site.meta_image_url }}"></a>
+      {% else %}
+        <a class="navbar-brand" href="/">{{ site.long_name }}</a>
+      {% endif %}
+    </div>
+    {% endcomment %}
+
+      <div class="header-med">
+        <div class="row">
+          <div class="">
+          <div class="col-sm-6 col-sm-offset-3 white90 bradius shadow2 nav-small">
+            <a href="/" class="col-sm-9"><img alt="{{ site.long_name }}" src="{{ site.meta_image_url }} style="width:100%" /></a>
+
+          <div class="nav-side p0 col-sm-3">
+            {% if request.logged_in? or request.sorta-logged-in?  %}
+              <button class="btn btn-form btn-green"><a href="/logout?page_id=19">sign out</a></button>
+            {% else %}
+              <button class="btn btn-form btn-green"><a href="/login">log-in</a></button>
+            {% endif %}
+            <button class="btn btn-form btn-green"><a href="/newsletter_signup">connect</a></button>
+          </div>
+        </div>
+        </div>
+        </div>
+    <div class="nav-core">
+      <div>
+        {% for child in site.root_nav_pages %}
+        {% if child.nav_children.size == 0 %}
+          {% assign split = child.title | split: '-' %}
+        <span>
+        <button class="btn btn-form btn-menu2 beet"><a href="{{ child.url }}">{{ split[0] }}<br/><span class="ln2">{{ split[1] }}</span></a></button>
+        </span>
+        {% else %}
+          {% assign short = child.title | split: '-' %}
+        <span class="dropdown">
+        <button class="btn btn-form btn-menu2 beet">{{ short[0] }}<br/><span class="ln2">{{ short[1] }}</span></button>
+        <ul id="what" class="dropdown-content">
+          {% for child2 in child.nav_children %}
+          <li><a href="{{ child2.url }}">{{ child2.name }}</a></li>
+          {% endfor %}
+        </ul>
+        </span>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  </div>
+</nav>
+
+{% else %}
+
+<nav class="navbar navbar-static-top" role="navigation">
+  <div class="container-fluid">
+      <div class="header-large">
+        <div class="row nav-large white90 shadow2">
+          <div class="col-sm-5">
+            <a href="/" class="col-sm-12"><img alt="{{ site.long_name }}" src="{{ site.meta_image_url }}" /> </a>
+          </div>
+          <div class="col-sm-6">
+            <div class="nav-core">
+              <div>
+                {% for child in site.root_nav_pages %}
+                {% if child.nav_children.size == 0 %}
+                  {% assign split = child.title | split: '-' %}
+                <span>
+                <button class="btn btn-form btn-menu beet"><a href="{{ child.url }}">{{ split[0] }}<br/><span class="ln2">{{ split[1] }}</span></a></button>
+                </span>
+                {% else %}
+                  {% assign short = child.title | split: '-' %}
+                <span class="dropdown">
+                <button class="btn btn-form btn-menu beet">{{ short[0] }}<br/><span class="ln2">{{ short[1] }}</span></button>
+                <ul id="what" class="dropdown-content dropdown-home">
+                  {% for child2 in child.nav_children %}
+                  <li><a href="{{ child2.url }}">{{ child2.name }}</a></li>
+                  {% endfor %}
+                </ul>
+                </span>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1 nav-side">
+            {% if request.logged_in? or request.sorta-logged-in?  %}
+              <button class="btn btn-form btn-green"><a href="/logout?page_id=19">sign out</a></button>
+            {% else %}
+              <button class="btn btn-form btn-green"><a href="/login">log-in</a></button>
+            {% endif %}
+            <button class="btn btn-form btn-green"><a href="/newsletter_signup">connect</a></button>
+          </div>
+        </div>
+        <div class="row headlines">
+          <a href="/" class="text-center"><img class="over-logo" src="headline-logo2.png" alt="garden works logo" /></a>
+          <div class="headline-scr text-center">everyone deserves fresh produce</div>
+        </div>
+        </div>
+  </div>
+</nav>
+
+{% endif %}

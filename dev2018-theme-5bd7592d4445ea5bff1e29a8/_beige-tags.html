@@ -1,0 +1,29 @@
+
+{% for page in tag.most_recent_published_pages %}
+
+        <div class="col-sm-8 col-sm-offset-2 panel-short">
+          <div class="col-sm-4 text-center flex-col">
+            {% for feature in page.features %}
+            <div class="mtb30" data-scroll>
+              <a href="{{ page.excerpt | strip_html }}"><img class="tip" data-tip="learn more" src="{{feature.image_url}}" alt="{{page.headline}}" /></a>
+            </div>
+            {%  endfor %}
+          </div>
+          <div class="col-sm-8 p20">
+            {% if page.headline == "empower" %}
+            <h5 class="beet">{{page.headline}}</h5>
+              <div class="beet">{{page.basic.content}}</div>
+            {% elsif page.headline == "educate" %}
+              <h5 class="gr2">{{page.headline}}</h5>
+              <div class="gr2">{{page.basic.content}}</div>
+            {% elsif page.headline == "support" %}
+              <h5 class="orange">{{page.headline}}</h5>
+              <div class="orange">{{page.basic.content}}</div>
+            {% else %}
+              <h5>{{page.headline}}</h5>
+              <div>{{page.basic.content}}</div>
+            {% endif %}
+          </div>
+        </div>
+
+{% endfor %}

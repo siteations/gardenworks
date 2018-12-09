@@ -1,0 +1,72 @@
+{% assign arr = event.tags | map: 'slug' | append: ' ' | downcase | remove: ']' | remove: '['| remove: '"' | remove: ',' %}
+<div class="cards vol shadow2 {{arr}}">
+    <div class="text">
+        <div class="imagery">
+        </div>
+        <a href="{{event.url}}"><h6 class="title beet" style="width: 100%">{{event.name}}</h6></a>
+        <div class="add-tags mt20"><span class="gr icon-tag"></span>
+            {% for tag in event.tags %}
+            <button class="btn tag-gr filter" data-filter='.{{tag.slug}}'>{{ tag.name | strip_html }}</button>
+            {% endfor %}
+        </div>
+        <div class="event-info-date mt10">
+            <i class="icon-calendar"></i>
+            <span class="brandon">
+
+                  {% assign BuildYear = '2100' %}
+                  {% assign FlexibleYear = '2200' %}
+                  {% assign ScheduledYear = '2300' %}
+
+                  {% capture EventYear %}{{event.event.local_start_at | date: '%Y'}}{% endcapture %}
+                  {% capture EventDuration %}{{event.event.duration}}{% endcapture %}
+
+                  {% if EventYear == BuildYear %}
+                  May, June, August {% if EventDuration%}({{event.event.duration}} shifts) {% endif %}
+                  {% elsif EventYear == FlexibleYear %}
+                  It's Flexible! {% if EventDuration%}(~{{event.event.duration}} monthly) {% endif %}
+                  {% elsif EventYear == ScheduledYear %}
+                  Meet Regularly {% if EventDuration%}(~{{event.event.duration}}+ monthly) {% endif %}
+                  {% else %}
+                  {{ event.event.local_start_at | date: '%A, %B %d, %Y at %I:%M %p' }}
+                  {% endif %}
+
+                  {% if event.event.is_multi_day? %}
+                  &ndash; {{ event.event.local_end_at | event_date }}
+                  {% endif %}
+                </span>
+        </div>
+        {% if event.event.has_venue? %}
+        <div class="event-info-venue mt10">
+            <i class="icon-meetup_16"></i>
+            {% if event.event.has_venue_address? %}
+            <a href="{{ event.event.venue_address.google_map_link }}" class="beet">{{ event.event.venue_name }}</a>
+            <span class="brandon"> in
+            {{ event.event.venue_address.location }} </span>
+            {% else %}
+            <span class="brandon">{{ event.event.venue_name }}</span>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% if event.event.is_ticket_required? %}
+        <div class="event-info-ticket brandon mt10">
+            <i class="icon-ticket"></i> Ticket Required
+            <!--
+                    JSB event.event.ticket_price_with_currency }}
+                    JSB elsif event.event.is_user_ticket_required? %}
+                    JSB event.event.user_ticket_price_with_currency }}
+                    -->
+        </div>
+        {% endif %}
+        {% if event.event.show_guests? and event.event.rsvps_count > 0 %}
+        <div class="event-info-rsvps">
+            <i class="icon-user"></i><span class="brandon">
+            {{ event.event.rsvps_count }} {% if event.event.rsvps_count == 1 %}person is{% else %}people are{% endif %} helping</span>
+        </div>
+        {% endif %}
+        <div class="mt20 grey">
+            {{event.event.content}}
+        </div>
+        <button class="btn btn-green"><a href="{{event.url}}">Learn More </a></button>
+    </div>
+    <div class="volunteer-data {{event.url | remove: '/'}}" data-start="{{event.event.local_start_at | date: '%B-%d-20%y'}}" data-time="{{event.event.local_start_at | date:'%H:%M'}}" data-multi="{{event.event.is_multi_day?}}" data-end="{{ event.event.local_end_at | date: '%B-%d-20%y' }}" data-class="{{event.url | remove: '/'}}" data-type="{{event.tags[0].name | strip_html }}" style="display: none;"></div>
+</div>

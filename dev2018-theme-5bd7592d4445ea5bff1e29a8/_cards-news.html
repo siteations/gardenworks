@@ -1,0 +1,23 @@
+<!--sort the in-coming array by excerpt value, then use -->
+{% for post in tag.most_recent_published_pages_no_pagination limit:6 offset:0 %}
+
+            <div class="cards news shadow2" id="{{forloop.index0}}">
+              <div class="date"> {{post.published_at | date: '%b %d, %Y'}}</div>
+              <h6 class="title">{{post.title}}</h6>
+              <div class="imagery">
+                {% if post.tags[0].name == "blog" %}
+                  <a href="{{post.url}}">
+                {% elsif post.tags[0].name == "instagram" or post.tags[0].name == "press" %}
+                  <a href="{{ post.tags[1].name }}" target="_blank" >
+                {% else %}
+                  <a href="{{post.url}}">
+                {% endif %}<img class="cards-feature text-center tip" data-tip="learn more" data-mode="above" src="{{post.features[0].image_url}}"/></a>
+              </div>
+              <div class="text">
+                <p><strong>{{post.headline}}</strong></p>
+                <p data="{{post.basic.content | strip_html }}">{{post.blog_post.content_full | truncatewords: 12 | strip_html }}</p>
+                <div class="btn-form tag text-center">{{post.tags[0].name}}</div>
+              </div>
+            </div>
+
+{% endfor %}

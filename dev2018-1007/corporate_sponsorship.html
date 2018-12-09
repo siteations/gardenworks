@@ -1,0 +1,218 @@
+{% include "breadcrumbs" %}
+
+{% if page.headline.size > 0 %}
+<h4 class="beet"></h4>
+{% endif %}
+
+            <div class="row text-center m30">
+                <h3 class="beet">Join Our Sponsors</h3>
+            </div>
+
+<div style="display:none">
+  {{ page.volunteer_signup.content }}
+</div>
+
+<div class="row pb20 mt20">
+  <div class="col-sm-8 col-sm-offset-2 panel-short sponsor-intro text-center">
+  </div>
+</div>
+
+
+
+            <div class="row text-center m30">
+                <h3 class="beet">Meet Our Sponsors</h3>
+            </div>
+
+<div class="row pb20">
+  <div class="sponsor-thanks col-sm-8 col-sm-offset-2 panel-short text-center">
+  </div>
+</div>
+<div class="row pb20">
+  <div class="col-sm-8 col-sm-offset-2 nav-core">
+    {% tag 'sponsor' with "cards-sponsor" %}
+  </div>
+</div>
+
+
+<div id="content-2">
+<div class="row beige shadow pb20 mt20">
+  <div class="col-sm-8 col-sm-offset-2 panel-short">
+  {% if page.volunteer_signup.content.size > 0 %}
+                    <div class="sponsor-recog col-sm-4 p20 flex-col">
+                      {% for feature in page.features %}
+            <div class="mtb30">
+              <img class="beetB" src="{{feature.image_url}}" alt="sponsor"/>
+            </div>
+            {%  endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="col-sm-8 p20">
+  <div class="form-wrap">
+    <div class="form">
+
+      {% if request.sorta_logged_in? %}
+
+      {% if request.current_signup.is_volunteer? %}
+      <h5 class="beet">Hi {{ request.current_signup.name_or_email }},<br> we have you down as a Corporate Sponsor.</h5>
+
+      <div class="padtop">
+        You can update your info below.
+      </div>
+      {% else %}
+      <h5 class="beet">Hi {{ request.current_signup.name_or_email }},<br> can you be a Corporate Sponsor?</h5>
+
+      {% endif %}
+
+      {% if request.logged_in? == false %}
+      <div class="padtop">
+        If you're not {{ request.current_signup.name_or_email }},<br>
+        <a href="{{ request.current_signup.logout_url }}">click here</a>.
+      </div>
+      {% endif %}
+
+      {% else %}
+
+      <h5 class="beet">Will you be a Corporate Sponsor?</h5>
+
+      {% endif %}
+
+      <p>To request our Corporate Sponsorship Program packet by mail, complete the form below:</p>
+
+      {% form_for volunteer_signup %}
+
+      <div class="form-errors">{% error_messages_for volunteer_signup %}</div>
+
+      <div class="padtopmore padbottommore">
+        {% for volunteer_type in page.volunteer_signup.volunteer_types %}
+        <div class="row-fluid">
+          <div class="span12"><label class="checkbox">
+            {% check_box_tag 'volunteer_signup[volunteer_type_ids][]', volunteer_type.id, collection:volunteer_signup.volunteer_type_ids, member:volunteer_type.id, class:"checkbox" %}
+            {{ volunteer_type.name }}
+          </label></div>
+        </div>
+        {% endfor %}
+      </div>
+      {% hidden_field_tag 'volunteer_signup[volunteer_type_ids][]', '' %}
+
+      {% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}
+      <div class="row-fluid">
+        <div class="span6">
+          <label for="volunteer_signup_first_name">First Name</label>{% text_field "first_name", class:"text" %}
+        </div>
+        <div class="span6">
+          <label for="volunteer_signup_last_name">Last Name</label>{% text_field "last_name", class:"text" %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if request.sorta_logged_in? == false %}
+      <div class="row-fluid">
+        <div class="span6"><label for="volunteer_signup_email">Email</label>{% email_field "email", class:"text" %}
+        </div>
+        {% if site.ask_for_mobiles? %}
+        <div class="span6">
+          <label for="volunteer_signup_mobile_number">Mobile phone (optional)</label>{% phone_field "mobile_number", class:"text" %}
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="row-fluid">
+        <div class="span6">
+          <label class="checkbox" for="volunteer_signup_email_opt_in">{% check_box "email_opt_in", class:"checkbox" %} Send me email updates</label>
+        </div>
+        {% if site.ask_for_mobiles? %}
+        <div class="span6">
+          <label class="checkbox" for="volunteer_signup_mobile_opt_in">{% check_box "mobile_opt_in", class:"checkbox" %} Send me text messages</label>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if page.volunteer_signup.is_phone? %}
+      <div class="row-fluid">
+        <div class="span6">
+          <label for="volunteer_signup_phone_number">Phone</label>{% phone_field "phone_number", class:"text" %}
+        </div>
+        <div class="span6">
+          <label for="volunteer_signup_phone_time">When is a good time to call?</label>{% text_field "phone_time", class:"text" %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.volunteer_signup.is_address? %}
+      {% if request.sorta_logged_in? == false or request.current_signup.has_full_address? == false %}
+      <div class="row-fluid">
+        <div class="span12">
+          <label for="volunteer_signup_submitted_address">Address (Street, City, State, Postal code)</label>{% text_field "submitted_address", class:"text" %}
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+
+      <div class="row-fluid">
+        <div class="span12">
+          <label for="volunteer_signup_availability">When are you available? (optional)</label>{% text_field "availability", class:"text" %}
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <label for="volunteer_signup_content">Comments, other ideas, etc. (optional)</label>{% text_area "content", class:"textarea autogrow" %}
+        </div>
+      </div>
+
+      {% if site.ask_to_publish_to_stream? %}
+      <div class="row-fluid">
+        <div class="span12">
+          <label class="checkbox" for="volunteer_signup_is_private">{% check_box "is_private", class:"checkbox" %} Don't publish this on the website</label>
+        </div>
+      </div>
+      {% endif %}
+
+      {% submit_tag "Save Corporate Sponsor info", class:"submit-button btn btn-green" %}
+      <div class="form-submit"></div>
+
+      {% endform_for %}
+
+    </div>
+  </div>
+                    </div>
+                  </div>
+                </div>
+
+
+    <div class="mb20">
+      <!--dividers-->
+        <div class="row text-bar">
+          <div class="col-sm-2 col-sm-offset-2 bar">
+          </div>
+          <div class="col-sm-4">
+            <h4 class="beet text-center"> Donate Materials </h4>
+          </div>
+          <div class="col-sm-2 bar">
+          </div>
+        </div>
+    </div>
+            {% subpage 'wish_list' with "beige-cols-wh" %}
+
+
+
+{% include 'join-us' %}
+
+{% comment %}
+  {% if page.tags_count > 0 %}
+  <div id="page-tags" class="page-tags">
+    {% include "page_tags" with page %}
+  </div>
+  {% endif %}
+
+  <div class="like-page">
+    <strong>Like this to encourage your associates to become a Corporate Sponsor.</strong>
+    {% include "like_page" %}
+  </div>
+
+  {% if page.show_stream? %}
+  {% include "page_stream" %}
+  {% endif %}
+{% endcomment %}
+
+</div>

@@ -1,0 +1,53 @@
+<div class="event-data {{event.url | remove: '/'}}" data-start="{{event.event.local_start_at | date: '%B-%d-20%y'}}" data-time="{{event.event.local_start_at | date:'%H:%M'}}" data-multi="{{event.event.is_multi_day?}}" data-end="{{ event.event.local_end_at | date: '%B-%d-20%y' }}" data-class="{{event.url | remove: '/'}}" data-type="{{event.tags[0].name | strip_html }}" style="display: none;">
+    <div class="col-sm-8 col-sm-offset-2 panel-short">
+        <div class="col-sm-4 text-center flex-col">
+            <div class="mtb30">
+                {% comment %}
+                {% if event.features[0].image_url %}
+                <img class="beetB" src="{{event.tags[0].name | strip_html }}.jpg" alt="{{event.features[0].image_url}}"/>
+                {% else %}
+                <img class="beetB" src="{{event.tags[0].name | strip_html }}.jpg" alt="{{event.tags[0].name | strip_html }}"/>
+                {% endif %}
+                {% endcomment %}
+            </div>
+        </div>
+        <div class="col-sm-8 p20">
+            <strong>{{ event.event.local_start_at | date: '%A, %B %d, %Y at %I:%M %p' }}
+    {% if event.event.is_multi_day? %}
+    through {{ event.event.local_end_at | event_date }}
+    {% endif %}
+    {% if event.event.is_ticket_required? %}
+    &middot; {{ event.event.ticket_price_with_currency }}
+    {% elsif event.event.is_user_ticket_required? %}
+    &middot; {{ event.event.user_ticket_price_with_currency }}
+    {% endif %}
+    {% if event.event.show_guests? and event.event.rsvps_count > 0 %}
+    &middot;
+    <a href="{{ event.url }}">{{ event.event.rsvps_count }} rsvp{% if event.event.rsvps_count > 1 %}s{% endif %}</a>
+    {% endif %}
+  </strong>
+            {% if event.event.has_venue? %}
+            <div class="event-venue">
+                {% if event.event.has_venue_address? %}
+                <a href="{{ event.event.venue_address.google_map_link }}">{{ event.event.venue_name }}</a>
+                in
+                {{ event.event.venue_address.location }}
+                {% else %}
+                {{ event.event.venue_name }}
+                {% endif %}
+            </div>
+            {% endif %}
+            <h5 class="beet"><a href="{{ event.url }}">{{ event.name }}</a></h5>
+              <p>{{ event.event.content | strip_html}}</p>
+            {% if event.event.is_maximum_capacity? %}
+            <a class="btn btn-form btn-menu2" style="color: #fff;" href="{{ event.url }}">Sold out</a>
+            {% elsif event.event.is_past? == false %}
+            {% if event.event.is_ticket_required? %}
+            <a class="submit-link btn btn-form btn-green" style="color: #fff;" href="{{ event.url }}">Buy tickets</a>
+            {% elsif event.event.accept_rsvps? %}
+            <a class="submit-link btn btn-form btn-green" href="{{ event.url }}" style="color: #fff;">RSVP</a>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

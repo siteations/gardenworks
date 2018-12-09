@@ -1,0 +1,19 @@
+<!--sort the in-coming array by excerpt value, then use -->
+
+{% assign new_array = tag.most_recent_published_pages_no_pagination limit: 50 | sort: 'excerpt' %}
+{% for page in new_array %}
+
+            <div class="cards bio shadow2">
+              <div class="imagery">
+              	{% for feature in page.features %}
+                <img class="cards-feature text-center tip" data-tip="read bio" data-mode="above" src="{{feature.image_url}}" style="width:100%"/>
+                {% endfor %}
+              </div>
+              <div class="text">
+                <h6 class="title">{{page.headline}}</h6>
+                <p><strong>{{page.title}}</strong></p>
+                <p data="{{page.basic.content | strip_html }}">{{page.basic.content | truncatewords: 12 | strip_html }}</p>
+              </div>
+            </div>
+
+{% endfor %}

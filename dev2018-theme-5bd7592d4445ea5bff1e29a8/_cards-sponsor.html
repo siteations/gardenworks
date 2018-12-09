@@ -1,0 +1,17 @@
+<!--sort the in-coming array by excerpt value, then use -->
+
+{% for page in tag.most_recent_published_pages_no_pagination  limit:30 %}
+
+            <div class="cards sponsor shadow2 ">
+              <div class="imagery" style="display:flex; justify-content: center;">
+              	{% for feature in page.features %}
+                <img class="cards-feature text-center" src="{{feature.image_url}}" style=" max-height: 100px;"/>
+                {% endfor %}
+              </div>
+              <div class="text text-center"  >
+                <h6 class="title"><a href="{{page.title}}" class="beet" target="_blank">{{page.headline}}</a></h6>
+                <p data="{{page.basic.content | strip_html }}"></p>
+              </div>
+            </div>
+
+{% endfor %}

@@ -1,0 +1,11 @@
+{% assign new_array = tag.most_recent_published_pages_no_pagination | sort: 'slug' %}
+{% for page in new_array %}
+
+            <div class="cards partner shadow2">
+              <div class="text">
+                <h6 class="title">{{page.headline}}</h6>
+                <p data="{{page.excerpt | strip_html }}">{{page.basic.content}}</p>
+              </div>
+            </div>
+
+{% endfor %}

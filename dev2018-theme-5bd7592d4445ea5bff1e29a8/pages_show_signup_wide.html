@@ -1,0 +1,162 @@
+{% include "breadcrumbs" %}
+
+{% comment %}
+{% if page.headline.size > 0 %}
+<h2 class="headline">{{ page.headline }}</h2>
+{% endif %}
+{% endcomment %}
+
+<div id="content">
+
+  {% if page.signup.content.size > 0 %}
+    {% include "white-cols" %}
+  {% endif %}
+
+  {% if page.show_social_slider? and page.public_activities_count > 0 %}
+  {% include "social_slider" %}
+  {% endif %}
+
+  <div class="form-wrap">
+    <div class="form">
+
+      {% form_for signup %}
+
+      {% if request.sorta_logged_in? %}
+        <!--divider with center text (1)-->
+      <div class="row text-center m30">
+        <h4 class="brown">Hi {{ request.current_signup.name_or_email }}, thanks for joining!</h4>
+      </div>
+
+      {% if request.logged_in? == false %}
+      <div class="padbottommore"><small>If you're not {{ request.current_signup.name_or_email }}, <a href="{{ request.current_signup.logout_url }}">click here to signup</a>.</small></div>
+      {% endif %}
+
+      {% endif %}
+      <div class="">
+
+      <div class="form-errors">{% error_messages_for signup %}</div>
+
+      {% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="col-md-8 col-sm-offset-4"><div class="form-group"><label for="signup_first_name">First Name</label>{% text_field "first_name", class:"text form-control" %}</div></div>
+          <div class="col-md-8 col-sm-offset-4"><div class="form-group"><label for="signup_last_name">Last Name</label>{% text_field "last_name", class:"text form-control" %}</div></div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if request.sorta_logged_in? == false or request.current_signup.has_mobile? == false %}
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-8 col-sm-offset-4"><div class="form-group"><label for="signup_email">Email</label>{% email_field "email", class:"text form-control" %}</div></div>
+        {% if site.ask_for_mobiles? %}
+        <div class="col-md-8 col-sm-offset-4"><div class="form-group"><label for="signup_mobile_number">Mobile phone</label>{% phone_field "mobile_number", class:"text form-control" %}</div></div>
+        {% endif %}
+        </div>
+      </div>
+
+
+      {% unless page.show_consent_form? %}
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+          <div class="col-md-8 col-sm-offset-4"><div class="checkbox"><label for="signup_email_opt_in">{% check_box "email_opt_in", class:"checkbox" %} Send me email updates</label></div></div>
+          {% if site.ask_for_mobiles? %}
+          <div class="col-md-8 col-sm-offset-4"><div class="checkbox"><label for="signup_mobile_opt_in">{% check_box "mobile_opt_in", class:"checkbox" %} Send me text message updates</label></div></div>
+          {% endif %}
+        </div>
+        </div>
+      {% endunless %}
+      {% endif %}
+
+      {% if page.signup.is_phone? %}
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-8 col-sm-offset-4"><div class="form-group"><label for="signup_phone_number">Phone</label>{% phone_field "phone_number", class:"text form-control" %}</div></div>
+      </div>
+    </div>
+      {% endif %}
+
+      {% if page.signup.is_address? %}
+
+      {% if request.sorta_logged_in? == false or request.current_signup.has_full_address? == false %}
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-8 col-sm-offset-4"><div class="form-group"><label for="signup_submitted_address">Address (Street, City, State, Postal code)</label>{% text_field "submitted_address", class:"text form-control" %}</div></div>
+      </div>
+    </div>
+      {% endif %}
+
+      {% endif %}
+
+      {% if page.signup.has_labeled_tags? %}
+        {% include "labeled_tags" %}
+      {% endif %}
+
+      {% if page.signup.is_volunteers? and site.ask_for_volunteers? %}
+      {% if request.sorta_logged_in? == false or request.current_signup.is_volunteer == false %}
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-8 col-sm-offset-4"><div class="checkbox"><label for="signup_is_volunteer">{% check_box "is_volunteer", class:"checkbox" %} I want to volunteer</label></div></div>
+      </div>
+    </div>
+
+      {% endif %}
+      {% endif %}
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-8 col-sm-offset-4"><div class="checkbox"><label for="signup_activity_is_private"> <input class="checkbox" id="signup_activity_is_private" name="signup[activity_is_private]" type="checkbox" value="1" checked /> Keep your activity private</label>
+        </div></div>
+      </div>
+      </div>
+
+      {% if page.show_consent_form? %}{% include "consent_form" %}{% endif %}
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-8 col-sm-offset-4">
+            {% if page.signup.is_all_info_collected? == false %}
+            {% if request.sorta_logged_in? %}
+            {% submit_tag "Update info", class:"submit-button btn btn-green" %}
+            {% else %}
+            {% submit_tag "Signup", class:"submit-button btn btn-green" %}
+            {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="form-submit"></div>
+
+      {% endform_for %}
+
+      {% if page.text_keyword_instructions.size > 0 %}
+      <div class="row padbottom padtopmore">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-8 col-sm-offset-4">
+          or {{ page.text_keyword_instructions }}
+        </div>
+      </div>
+    </div>
+      {% endif %}
+
+    </div>
+    </div><!-- /form -->
+  </div><!-- /form-wrap -->
+</div><!-- /content -->
+
+{% if page.tags_count > 0 %}
+<div id="page-tags" class="page-tags">
+  {% include "page_tags" with page %}
+</div>
+{% endif %}
+
+<div class="like-page">
+  <strong>.</strong>
+{% comment %}
+  {% include "like_page" %}
+{% endcomment %}
+</div>
+
+{% if page.show_stream? %}
+{% include "page_stream" %}
+{% endif %}

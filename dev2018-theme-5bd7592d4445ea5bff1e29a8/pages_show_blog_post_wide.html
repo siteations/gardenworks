@@ -1,0 +1,45 @@
+{% include "breadcrumbs" %}
+
+
+<div class="text-center">
+  <h3 class="beet">{{ page.headline }}</h3>
+</div>
+
+<div id="content">
+
+
+        <div class="row pb20">
+        <div class="col-sm-8 col-sm-offset-2 panel-short">
+          <div class="col-sm-4 text-center flex-col">
+            {% for feature in page.features %}
+            <div class="mtb30">
+              <img class="beetB tip" data-tip="show large" data-mode="above" src="{{feature.image_url}}" alt="{{feature.headline}}"/>
+              <p class="small">{{feature.headline}}</p>
+            </div>
+            {%  endfor %}
+          </div>
+          <div class="col-sm-8 p20">
+            {% if page.has_author? %}
+            {% include "page_byline" %}
+            {% endif %}
+              {{ page.blog_post.content_full }}
+
+              <div class="row p20">
+                <button class="btn btn-green"><a href="/about">Return Home</a></button>
+                <button class="btn btn-green"><a href="/blog">Return to Blog</a></button>
+              </div>
+
+          </div>
+
+        </div>
+      </div>
+
+  {% comment %}
+  {% if page.show_stream? %}
+  {% include "page_stream" %}
+  {% endif %}
+  {% endcomment %}
+
+  {% include "join-us" %}
+
+</div>

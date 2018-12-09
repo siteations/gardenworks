@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+
+    <!-- Bootstrap & other css scss-->
+    <link href="theme.scss" rel="stylesheet"  />
+    <link href="leaflet.css" type="text/css"  rel="stylesheet" />
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+    <link href="tipr.css" type="text/css"  rel="stylesheet" />
+
+    {{ content_for_header }}
+
+    <script type="text/javascript">
+      NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+    </script>
+  </head>
+  <body class="aware-theme v2-theme {{ page.page_class_name }} page-{{ request.template | replace: '_', '-' }} js">
+
+    {% include "nav" %}
+
+    <div class="main-container" id="middle">
+      <div class="main container-fluid clearfix {% if site.has_background_image? %}well well-lg{% endif %}">
+
+
+        {% if request.is_sidebar? %}
+        {% include "columns_2" %}
+        {% else %}
+        {% include "columns_1" %}
+        {% endif %}
+
+      </div>
+      <!-- .main -->
+    </div>
+    <!-- .main-container -->
+
+    <!-- footer-->
+
+            <!--footer large -->
+        <div class="footer-large text-center">
+          <div class="row headline-scr text-center white">
+            reach out, get involved
+          </div>
+          <h3 class="white mt0">connect</h3>
+          <!--<div class="row white50">
+          </div>-->
+          <div class="row contact-cards">
+            <div class="col-sm-8 col-sm-offset-2 nav-core">
+
+            <div class="cards trans text-center offset sm-off">
+              {% include "newsletter-sub" %}
+            </div>
+            <div class="trans">
+              <div class="grbk tip" data-tip="say hello">
+                <h4 class="beige-t">e-mail</h4>
+                <p><strong>The GardenWorks Project</strong><br/>PO Box 615<br/>West Chicago, IL 60186<br/>630-791-3033<br/><br/>
+                  <a href="mailto:info@gardenworksproject.org" >info@gardenworksproject.org</a></p>
+              </div>
+            </div>
+            <div class="cards trans text-center offset med-off">
+              <h4 class="white">log-in</h4>
+              <div class="row mb10">
+                <div class="col-xs-6">
+                <a href="{{ request.facebook_connect_url }}" class="btn connect-button btn-form btn-green"><i class="icon-facebook-squared"></i>Facebook</a></div>
+                <div class="col-xs-6">
+                <a href="{{ request.twitter_connect_url }}" class="btn connect-button btn-form btn-green"><i class="icon-twitter-squared"></i>Twitter</a></div>
+              </div>
+              {% form_for user_session %}
+                {% email_field "email", class:"text form-control input" %}
+                {% password_field "password", class:"text form-control input" %}
+                {% submit_tag "Sign In", class:"submit-button btn btn-form btn-menu2 join" %}
+              {% endform_for %}
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" row footer-credits">
+            <span class="small">The GardenWorks Project © 2018</span>
+            <span class="small">Created and Hosted on <a href="http://nationbuilder.com/">NationBuilder</a></span>
+            <span class="small">Theme Design and Dev by <a href="http://siteations.com/">Siteations Studio</a></span>
+        </div>
+
+    {% comment %}
+    <footer>
+      <div class="container {% if site.has_background_image? %}well well-lg{% endif %}">
+
+        {{ content_for_footer }}
+
+        {% if site.footer_content.size > 0 %}
+        <div class="footer-text">{{ site.footer_content }}</div>
+        <hr/>
+        {% endif %}
+
+        <div class="row">
+
+          <div class="col-md-6 footer-left">
+            {% if request.logged_in? %}
+              Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
+              {% if site.show_public_profiles? %}
+                <a href="{{ request.current_signup.profile_url }}">public profile</a>,
+              {% endif %}
+              <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
+              <a href="{{ request.current_signup.logout_url }}">sign out</a>.
+            {% else %}
+              Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
+                  href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
+            {% endif %}
+          </div>
+          <div class="col-md-6 footer-right text-right">
+            <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves.
+                 You can style it or move it in different ways, but please leave it in the footer. -->
+            Created with <a href="http://nationbuilder.com/">NationBuilder</a>
+          </div>
+
+        </div>
+      </div>
+      <!-- container -->
+    </footer>
+
+    {% if site.has_background_image? %}
+      <!--[if lt IE 9]>
+      <script type="text/javascript" src="/javascripts/jquery.backstretch.min.js"></script>
+      <script type="text/javascript">
+        jQuery.backstretch("{{ site.background_image_url }}", {speed: 0});
+      </script>
+      <![endif]-->
+      <style>
+        body {
+          background: url('{{ site.background_image_url }}') no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+    </style>
+    {% endif %}
+    {% endcomment %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery-3.3.1.js"></script>
+    <script src="jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.js"></script>
+    <!-- quick scroll animations -->
+    <script src="scrolltrigger.js"></script>
+    <!-- quick tool-tips -->
+    <script src="tipr.js"></script>
+    <!-- quick map tiles -->
+    <script src="leaflet.js"></script>
+    <!-- custom scripts -->
+    <script src="scripts2.js"></script>
+    <!-- custom scripts -->
+    <script src="donations.js"></script>
+
+  </body>
+</html>
+

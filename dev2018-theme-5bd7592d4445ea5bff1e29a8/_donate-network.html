@@ -1,0 +1,27 @@
+{% for page in tag.most_recent_published_pages %}
+<div id="content">
+    <div class="row-fluid staged-donation-container">
+        <!-- .span6 -->
+        <div class="span6 staged-donation-content">
+            <div class="row beige pb20 mt20 shadow">
+                <div class="col-sm-8 col-sm-offset-2 panel-short">
+                    <div class="donate-network col-sm-4 p20 flex-col">
+                    {% for feature in page.features %}
+            <div class="mtb30">
+              <img class="beetB" src="{{feature.image_url}}" alt="{{feature.headline}}"/>
+            </div>
+            {%  endfor %}
+                    </div>
+                    <div class="col-sm-8 p20">
+                        <h5 class="beet">{{page.headline}}</h5>
+                        <p> with our secure payment method:</p>
+                        {% include 'donations' %}
+                        <br>
+                        {{page.donation.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .row-fluid -->
+</div>
+{% endfor %}

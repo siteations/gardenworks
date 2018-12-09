@@ -1,0 +1,12 @@
+<!--sort the in-coming array by excerpt value, then use -->
+
+{% assign new_array = tag.most_recent_published_pages_no_pagination | sort: 'slug' %}
+{% for page in new_array %}
+
+            <div class="cards-gr shadow2 ">
+              <div class="text">
+                {{page.basic.content}}
+              </div>
+            </div>
+
+{% endfor %}

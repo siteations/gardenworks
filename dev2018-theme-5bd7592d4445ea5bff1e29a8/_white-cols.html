@@ -1,0 +1,21 @@
+
+
+      <div class="row pb20">
+        <div class="col-sm-8 col-sm-offset-2 panel-short">
+          <div class="col-sm-4 text-center flex-col">
+            {% for feature in page.features %}
+            <div class="mtb30">
+              <img class="beetB" src="{{feature.image_url}}" alt="{{feature.headline}}"/>
+              <p class="small">{{feature.headline}}</p>
+            </div>
+            {%  endfor %}
+          </div>
+          <div class="col-sm-8 p20">
+            {% unless page.leaf? == false %}
+            <h5>{{page.headline}}</h5>
+            {% endunless %}
+              {{page.basic.content}}
+              {{page.signup.content}}
+          </div>
+        </div>
+      </div>

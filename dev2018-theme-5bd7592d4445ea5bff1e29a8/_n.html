@@ -1,0 +1,60 @@
+{% if page.type_name == "Donation (v2)" %}
+
+{% else %}
+          <!--top nav with image behind -->
+  why is this not showing?
+  {% comment %}
+      <div class="header-med">
+        <div class="row">
+          <div class="">
+          <div class="col-sm-6 col-sm-offset-3 white90 bradius shadow2">
+            {% if site.has_meta_image? %}
+            <a href="" class="col-sm-9"><img src="{{ site.meta_image_url }}" alt="{{ site.long_name }}" style="width:100%" /></a>
+            {% else %}
+              <a class="navbar-brand" href="/">{{ site.long_name }}</a>
+            {% endif %}
+
+          <div class="nav-side p0 col-sm-3">
+            <button class="btn btn-form btn-green">log-in</button>
+            <button class="btn btn-form btn-green">connect</button>
+          </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="row bottom">
+          <div class="col-sm-6 col-sm-offset-3">
+              <div class="nav-core">
+                {% for child in site.root_nav_pages %}
+                {% if child.leaf? or child.nav_children.size == 0 %}
+                  {% assign split = child.title | split: '-' %}
+                <a href={{child.url}}>
+                  <button {% if child.is_or_is_ancestor_of_current_page? %}class="active btn btn-form btn-menu2"{% else %}class="btn btn-form btn-menu2"{% endif %}>{{split[0]}}<br/>
+                  <span class="ln2">{{split[1]}}</span></button></a>
+                {% else %}
+                  {% assign short = child.title | split: '-' %}
+                <div class="btn-group">
+                    <button type="button" class="btn btn-form btn-menu2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     {{ short[0] }}<br/><span class="ln2">{{ short[1] }}</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{child.url}}">{{ short[1] }}</a></li>
+                    {% for child2 in child.nav_children %}
+                      <li><a href="{{child2.url}}">{{child2.name}}</a></li>
+                    {% endfor %}
+                    </ul>
+                  </div>
+                <button class="btn btn-form btn-menu2 sm-off">Who<br/>
+                  <span class="ln2">leadership</span></button>
+                <button class="btn btn-form btn-menu2 ">How<br/>
+                  <span class="ln2">volunteer</span></button>
+                <button class="btn btn-form btn-menu2  med-off">When<br/>
+                  <span class="ln2">events</span></button>
+              </div>
+          </div>
+        </div>
+
+      </div>
+  {% endcomment %}
+
+{% endif %}

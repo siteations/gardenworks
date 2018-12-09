@@ -1,0 +1,257 @@
+
+<!-- actual content here-->
+
+{% if page.is_homepage? == false %}
+  {% include "breadcrumbs" %}
+{% endif %}
+
+<!-- actual content here, filtered by slug options-->
+
+<!---------------------------------------HOMEPAGE----------------------------------->
+{% if page.is_homepage? == true %}
+
+  <!-- number bar-->
+    {% include "number-top" %}
+    {% tag "numberabout" with "number-bar" %}
+    {% include "number-bottom" %}
+
+  <!-- headline bar -->
+  {% tag "aboutheadline" with "beige-center" %}
+
+    <!--divider with center text (2)-->
+      <div class="row text-center m30">
+        <h4 class="brown">home gardening for food insecure families</h4>
+      </div>
+
+     <div class="row beige pb20 shadow">
+      {% tag "empower" with "beige-tags" %}
+    </div>
+
+    <!--divider with center text (2)-->
+      <div class="row text-center m30">
+        <h4 class="brown">resources for all gardeners</h4>
+      </div>
+
+    <div class="row beige pb20 shadow">
+      {% tag "educate" with "beige-tags" %}
+      {% tag "support" with "beige-tags" %}
+    </div>
+
+    {% include "join-us" %}
+
+    <!--news slider-->
+    {% include "news_slider" %}
+
+<!---------------------------------------WHEN BLOG----------------------------------->
+{% elsif page.slug == "blog" %}
+
+<div class="text-center">
+  <h3 class="beet">{{ page.slug | capitalize }}</h3>
+</div>
+  <!-- page of cards-->
+  <div class="row card-row text-bar">
+      <div class="col-sm-8 col-sm-offset-2 nav-core">
+        {% subpage "when" with "cards-newsblog" %}
+      </div>
+  </div>
+
+  <!--divider with center text (1)-->
+      <div class="row text-center m30">
+        <h3 class="beet">{{page.excerpt}}</h3>
+      </div>
+
+      {% include "news_slider" %}
+
+<!---------------------------------------WHO LEADERSHIP----------------------------------->
+{% elsif page.slug == "leadership" %}
+  <!-- page of cards-->
+  <div class="row card-row text-bar">
+      <div class="col-sm-8 col-sm-offset-2 nav-core">
+        {% tag "board" with "cards" %}
+        {% tag "staff" with "cards" %}
+      </div>
+  </div>
+  <!--divider with center text (1)-->
+      <div class="row text-center m30">
+        <h4 class="brown">{{page.excerpt}}</h4>
+      </div>
+
+  <!-- letter from founder -->
+  {% include "beige-cols" %}
+
+
+<!---------------------------------------WHO PARTNERS----------------------------------->
+{% elsif page.slug == "partners" %}
+
+<!-- intro panel-->
+      <div class="row pb20">
+        <div class="col-sm-8 col-sm-offset-2 panel-short">
+          <div class="col-sm-4 text-center flex-col">
+            <div class="mtb30">
+              <img class="beetB" src="{{page.features[0].image_url}}" style="width:50%"/>
+            </div>
+          </div>
+          <div class="col-sm-8 p20">
+              <h5 class="brandon">{{page.content}}</h5>
+          </div>
+        </div>
+      </div>
+
+            <div class="row text-center">
+        <h3 class="gr">our community partners</h3>
+      </div>
+  <!-- page of maps-->
+  <div class="row card-row text-bar">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="cards" id="mapid" style="height:400px; width:100%;">
+        </div>
+        <p class="text-center">Scroll below or click map icons for partner information<br/><span class="brown glyphicon glyphicon-record"></span><span class="brown"> social services</span>, <span class="gr glyphicon glyphicon-record"></span><span class="gr"> community garden grants</span>, <span class="beet glyphicon glyphicon-record"></span><span class="beet"> pantries</span>, <span class="greyt glyphicon glyphicon-record"></span><span class="greyt"> resource center</span></p>
+      </div>
+  </div>
+    <!-- page of maps-->
+  {% include "news_slider" %}
+
+  <div class="row text-bar mt20">
+          <div class="col-sm-2 col-sm-offset-2 bar">
+          </div>
+          <div class="col-sm-4">
+            <h3 class="beet text-center">learn more</h3>
+          </div>
+          <div class="col-sm-2 bar">
+          </div>
+        </div>
+
+    <div class="row card-row text-bar mb20">
+      <div class="col-sm-8 col-sm-offset-2 nav-core">
+        <a href="/garden_builds"><button class="btn btn-green">Home Garden Program</button></a>
+        <a href="/community_gardens"><button class="btn btn-green">Community Garden Grants</button></a>
+        <a href="/network"><button class="btn btn-green">Food Growers Network & Resources</button></a>
+      </div>
+  </div>
+
+  <div class="panel-short">
+  {% subpage 'partner_contact' with "beige-center-white" %}
+  </div>
+
+
+<!-- WHAT network, community, and gardens ? ---------------------------------------------->
+{% elsif page.slug == "network" or page.slug == "community_gardens" or page.slug == "home_gardens" %}
+
+  <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 nav-core">
+      <h5 class="brandon gr2"><em>{{page.excerpt}}</em></h5>
+      </div>
+</div>
+
+  {% include "beige-cols-wh" %}
+
+{% if page.slug == "network" %}
+{% tag 'membership' with 'donate-network' %}
+{% elsif page.slug == "home_gardens" and page.has_children %}
+  <!-- number bar-->
+  <div class="pb20">
+    {% include "number-top" %}
+    {% tag "numbergardens" with "number-bar" %}
+    {% include "number-bottom" %}
+  </div>
+
+{% endif %}
+
+{% if page.slug == "network" or page.slug == "community_gardens" %}
+  <div class="row text-bar mt20">
+          <div class="col-sm-2 col-sm-offset-2 bar">
+          </div>
+          <div class="col-sm-4">
+            {% if page.slug == "network" %}
+            <h4 class="gr2 text-center">resource center & resources</h4>
+            {% elsif page.slug == "community_gardens" %}
+            <h4 class="gr2 text-center">community garden resources</h4>
+            {% endif %}
+          </div>
+          <div class="col-sm-2 bar">
+          </div>
+        </div>
+{% else %}
+<h4 class="gr2 text-center">how can you get involved?</h4>
+{% endif %}
+
+{% if page.has_children? %}
+  <div class="row card-row text-bar pb20">
+      <div class="col-sm-8 col-sm-offset-2 nav-core">
+      {% for child in page.children %}
+        {% if child.tags[0].name == 'resource' %}
+        <button class="btn btn-green opt" id="{{child.headline| replace: ' ', '_'}}">{{child.headline}}</button>
+        {% endif %}
+      {% endfor %}
+      </div>
+  </div>
+
+      {% for child in page.children %}
+        {% if child.tags[0].name == 'resource' %}
+        <div class="{{child.headline| replace: ' ', '_'}} panel" style="display:none">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 panel-short">
+        <div class="col-sm-4 text-center flex-col">
+            {% for feature in child.features %}
+            <div class="mtb30">
+                <img class="beetB" src="{{feature.image_url}}" alt="{{feature.headline}}"/>
+                <p class="small">{{feature.headline}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-8 p20">
+            {{child.basic.content}}
+        </div>
+    </div>
+</div>
+
+</div>
+        {% endif %}
+      {% endfor %}
+
+{% endif %}
+
+
+<!---------------------------------------OTHER----------------------------------->
+
+
+
+{% else %}
+    {% include "beige-cols-wh" %}
+{% endif %}
+
+
+
+<!-- stock join-us links-->
+{% if page.is_homepage? == false %}
+  {% include "join-us" %}
+{% endif %}
+
+<!-- footer out on the main page -->
+
+{% comment %}
+
+
+<div id="content hidden">
+  {% if page.tags_count > 0 %}
+  <div class="page-tags hidden">
+    {% include "page_tags" with page %}
+  </div>
+  {% endif %}
+
+  {% if page.is_homepage? == true and site.page_tags contains "homepage" %}
+    {% tag "homepage" with "homepage_widget" %}
+  {% endif %}
+
+  <div class="like-page">
+    <strong>Do you like this page?</strong>
+    {% include "like_page" %}
+  </div>
+
+  {% if page.show_stream? %}
+  {% include "page_stream" %}
+  {% endif %}
+
+</div>
+
+{% endcomment %}

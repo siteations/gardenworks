@@ -1,0 +1,21 @@
+
+
+      <div class="row beige pb20 shadow">
+        <div class="col-sm-8 col-sm-offset-2 panel-short">
+          <div class="col-sm-4 col-xs-10 cold-xs-offset-1 text-center flex-col">
+            {% for feature in page.features %}
+            <div class="mtb30">
+              <img class="beetB" src="{{feature.image_url}}" alt="educate"/>
+              <p class="small">{{feature.headline}}</p>
+            </div>
+            {%  endfor %}
+          </div>
+          <div class="col-sm-8 p20">
+            {% unless page.leaf? == false %}
+            <h5 class="beet">{{page.headline}}</h5>
+            {% endunless %}
+              {{page.basic.content}}
+              {{page.signup.content}}
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,36 @@
+{% include "breadcrumbs" %}
+
+{% if page.headline.size > 0 %}
+<h2 class="headline">{{ page.headline }}</h2>
+{% endif %}
+
+<div id="content">
+
+  <div id="intro" class="intro">
+    <div class="text-content">
+      {{ page.basic.content }}
+<div id="my-store-10324617"></div>
+<div>
+<script type="text/javascript" src="https://app.ecwid.com/script.js?10324617&data_platform=code&data_date=2016-10-23" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(3,3) list(10) table(20)","categoryView=grid","searchView=list","id=my-store-10324617");</script>
+</div>
+
+  {% if page.tags_count > 0 %}
+  <div class="page-tags">
+    {% include "page_tags" with page %}
+  </div>
+  {% endif %}
+
+  {% if page.is_homepage? == true and site.page_tags contains "homepage" %}
+    {% tag "homepage" with "homepage_widget" %}
+  {% endif %}
+
+  <div class="like-page">
+    <strong>Do you like this page?</strong>
+    {% include "like_page" %}
+  </div>
+
+  {% if page.show_stream? %}
+  {% include "page_stream" %}
+  {% endif %}
+
+</div>

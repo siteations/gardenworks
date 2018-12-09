@@ -1,0 +1,68 @@
+      <!--top-->
+
+        <div class="row text-bar">
+          {% if page.slug != "blog" %}
+            <div class="col-sm-2 col-sm-offset-2">
+          {% else %}
+             <div class="col-sm-2 col-sm-offset-2 bar">
+          {% endif %}
+          </div>
+          <div class="col-sm-4">
+            <!-- other image cards to be added-->
+            {% if page.slug == "partners" %}
+
+            {% else %}
+            <h4 class="gr text-center"> news </h4>
+            {% endif %}
+          </div>
+          {% if page.slug != "blog" %}
+            <div class="col-sm-2 ">
+          {% else %}
+             <div class="col-sm-2 bar">
+          {% endif %}
+          </div>
+        </div>
+    <!--cards span-->
+    <!--middle-->
+        <div class="row card-row text-bar">
+          <div class="col-sm-2">
+            <h4><span id="click-back" class="gr glyphicon glyphicon-chevron-left R40 next"></span></h4>
+          </div>
+          <div class="col-sm-8 nav-core">
+          {% if page.slug == "about" %}
+            {% tag "blog" with "cards-news" %}
+          {% elsif page.slug == "blog" %}
+            {% tag "press" with "cards-news" %}
+          {% elsif page.slug == "partners" %}
+            {% tag "partner" with "cards-partner" %}
+          {% endif %}
+          </div>
+          <div class="col-sm-2">
+            <h4><span id="click-next" class="gr glyphicon glyphicon-chevron-right L40 next"></span></h4>
+          </div>
+        </div>
+
+         {% if page.slug == "blog" %}
+            <div class="row text-bar">
+              <div class="col-sm-1 col-sm-offset-2">
+
+              </div>
+              <div class="col-sm-6">
+                <p class="gr text-center"><strong>Members of the press with media-related inquiries, please reach out to us via <a href="/contact" class="beet">email.</a></strong></p>
+                <div class="text-center">
+                {% if page.has_children? %}
+                {% for child in page.children %}
+                {% if child.tags[0].name == 'resource' %}
+                <button class="btn btn-green"><a href="{{child.url}}">{{child.headline}}</a></button>
+                 {% endif %}
+                {% endfor %}
+                {% endif %}
+                </div>
+              </div>
+              <div class="col-sm-1">
+
+              </div>
+            </div>
+         {% endif %}
+
+

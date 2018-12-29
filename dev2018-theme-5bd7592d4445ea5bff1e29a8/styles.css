@@ -132,9 +132,15 @@ p, span, li {
   font-size: 1.25em;
   font-family: "brandon-grotesque", sans-serif;
 }
+
 p a, span a {
-  color: #f1e2c5;
+  color: #B80F6C;
 }
+
+.foot {
+  color: #f1e2c5 !important;
+}
+
 p a:hover, span a:hover {
   text-decoration: none;
   font-weight: 700;
